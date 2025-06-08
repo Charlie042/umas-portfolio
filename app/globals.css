@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-yellow: #FFF2B6;
+  --card-black: #1E1E1E;
+  --card-blue: #56CCF2;
+  --card-ash: #FFF9F3;
+  --card-red: #7A3838;
+  --card-purple: #DACEFF;
+
 }
 
 @theme inline {
@@ -10,6 +17,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-card-yellow: var(--card-yellow);
+  --color-card-black: var(--card-black);
+  --color-card-blue: var(--card-blue);
+  --color-card-ash: var(--card-ash);
+  --color-card-red: var(--card-red);
+  --color-card-purple: var(--card-purple);
 }
 
 @media (prefers-color-scheme: dark) {
