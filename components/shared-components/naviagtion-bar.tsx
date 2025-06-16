@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { usePathname } from "next/navigation";
 
 
 
 const NavigationBar = () => {
 
-    const [active, setActive] = useState("Works");
-
+    const pathname = usePathname();
     const navItems = [
         {
             label: "Works",
@@ -39,9 +38,8 @@ const NavigationBar = () => {
             <Link
               key={item.label}
               href={item.href}
-              onClick={() => setActive(item.label)}
               className={`cursor-pointer text-[14px] px-4  ${
-                active === item.label
+                pathname === item.href
                   ? "bg-[#56CCF2] rounded-full px-4 font-medium"
                   : "text-black font-extralight"
               }`}

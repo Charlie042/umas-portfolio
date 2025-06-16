@@ -61,7 +61,7 @@ const Footer = () => {
             in Abuja, Nigeria
           </h4>
         </div>
-        <div className="flex items-center gap-2 text-[#828282] text-lg">
+        <div className="flex items-center gap-2 text-[#828282] text-lg my-10">
           <p className="flex items-center gap-2">
             <span>
               <Link href="https://www.linkedin.com/in/umaanidi/">Behance</Link>

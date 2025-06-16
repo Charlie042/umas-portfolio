@@ -39,4 +39,34 @@ export const data = [
     bgColor: "bg-[#FFFDF2]",
     borderColor: "border-[#C0A522]",
   },
+  {
+    id: 5,
+    name: "Precious Enarevba",
+    job: "Product Designer",
+    description:
+      "Uma has a knack for lifting the whole team’s work. She gives feedback that’s both detailed and empathetic, never vague or overwhelming.",
+    image: "/Precious.png",
+    bgColor: "bg-[#FBF9F9]",
+    borderColor: "border-[#1E1E1E]",
+  },
+  {
+    id: 6,
+    name: "Precious Enarevba",
+    job: "Product Designer",
+    description:
+      "Uma has a knack for lifting the whole team’s work. She gives feedback that’s both detailed and empathetic, never vague or overwhelming.",
+    image: "/Precious.png",
+    bgColor: "bg-[#FFFDF2]",
+    borderColor: "border-[#C0A522]",
+  },
+  {
+    id: 7,
+    name: "Precious Enarevba",
+    job: "Product Designer",
+    description:
+      "Uma has a knack for lifting the whole team’s work. She gives feedback that’s both detailed and empathetic, never vague or overwhelming.",
+    image: "/Precious.png",
+    bgColor: "bg-[#FFFDF2]",
+    borderColor: "border-[#C0A522]",
+  },
 ];
