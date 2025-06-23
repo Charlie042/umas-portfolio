@@ -18,16 +18,16 @@ const Footer = () => {
     }
   return (
     <footer className="bg-[#FAFAFA] border-[#F1F1F1]">
-      <div className="flex  justify-between mx-40 my-10 py-10">
-        <div className="w-1/2 flex flex-col gap-5">
-          <h2 className="text-4xl font-bricolage font-medium leading-tight w-140">
+      <div className="flex  xl:justify-between lg:flex-row flex-col  xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 my-10 py-10">
+        <div className="lg:w-1/2 w-full flex flex-col gap-5 px-10 lg:px-0">
+          <h2 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl font-bricolage font-medium leading-tight lg:w-140">
             Got a question or just want to say hi? I will be so happy to hear
             from you! 😊
           </h2>
           <Image src="/umaanidi.png" alt="cartoon" width={100} height={100} />
         </div>
-        <div className="w-1/2 flex flex-col items-end ">
-          <h4 className="text-4xl font-bricolage font-medium">
+        <div className="lg:w-1/2 w-full flex flex-col md:items-end items-start my-5 px-10 lg:px-0 ">
+          <h4 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl font-bricolage font-medium">
             Let’s connect here
           </h4>
           <div className="flex items-center gap-4">
@@ -41,7 +41,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center mx-40 ">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:mx-40 ">
         <button
           onClick={scrollToTop}
           className="flex items-center gap-2 text-[#828282] text-lg hover:bg-[#F4F4F4] p-2 rounded-full cursor-pointer"
