@@ -10,6 +10,26 @@ export const data = [
     borderColor: "border-[#E71E91]",
   },
   {
+    id: 8,
+    name: "Winner Chikezie",
+    job: "Product Designer",
+    description:
+      "Working alongside Uma has stretched my creativity in the best way. She’ll throw out a wild concept, then help you ground it in real user needs. I feel like I’ve learned a new way to think about problems every time we collaborate.",
+    image: "/Winner.png",
+    bgColor: "bg-[#FFF2FA]",
+    borderColor: "border-[#E71E91]",
+  },
+  {
+    id: 9,
+    name: "Winner Chikezie",
+    job: "Product Designer",
+    description:
+      "Working alongside Uma has stretched my creativity in the best way. She’ll throw out a wild concept, then help you ground it in real user needs. I feel like I’ve learned a new way to think about problems every time we collaborate.",
+    image: "/Winner.png",
+    bgColor: "bg-[#FFF2FA]",
+    borderColor: "border-[#E71E91]",
+  },
+  {
     id: 2,
     name: "Charles Ginger-eke",
     job: "Frontend Developer",
@@ -68,5 +88,34 @@ export const data = [
     image: "/Precious.png",
     bgColor: "bg-[#FFFDF2]",
     borderColor: "border-[#C0A522]",
+  },
+];
+
+
+export const badgeData = [
+  {
+    id: 1,
+    name: "UX Research",
+    icon: "/research.svg",
+  },
+  {
+    id: 2,
+    name: "UI Design",
+    icon: "/design.svg",
+  },
+  {
+    id: 3,
+    name: "Interactive Prototyping",
+    icon: "/figma.svg",
+  },
+  {
+    id: 4,
+    name: "Usability Testing & Iteration",
+    icon: "/testing.svg",
+  },
+  {
+    id: 5,
+    name: "UX Writing",
+    icon: "/writing.svg",
   },
 ];
