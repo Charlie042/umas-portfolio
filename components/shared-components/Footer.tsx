@@ -24,7 +24,7 @@ const Footer = () => {
             Got a question or just want to say hi? I will be so happy to hear
             from you! 😊
           </h2>
-          <Image src="/umaanidi.png" alt="cartoon" width={100} height={100} />
+          <Image src="/umaanidi.png" alt="cartoon" width={100} height={100} className="max-sm:w-20 "/>
         </div>
         <div className="lg:w-1/2 w-full flex flex-col md:items-end items-start my-5 px-10 lg:px-0 ">
           <h4 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl font-bricolage font-medium">

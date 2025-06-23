@@ -29,10 +29,10 @@ const NavigationBar = () => {
 
   return (
     <nav className="flex justify-between items-center max-w-[1400px] mx-auto py-5">
-      <div>
-        <Image src="/umaanidi.png" alt="logo" width={100} height={100} />
+      <div className="mx-5 lg:mx-0">
+        <Image src="/umaanidi.png" alt="logo" width={100} height={100} className="max-sm:w-20 "/>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2 rounded-full">
           {navItems.map((item) => (
             <Link
@@ -49,7 +49,7 @@ const NavigationBar = () => {
           ))}
         </ul>
       </div>
-      <div className="flex items-center gap-5">
+      <div className=" items-center gap-5 hidden lg:flex">
         <Link href="/resume" className="text-medium font-medium text-[#1E1E1E]">
           Resume
         </Link>

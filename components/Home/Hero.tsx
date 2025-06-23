@@ -4,9 +4,9 @@ import { IoMdMail } from "react-icons/io";
 
 const Hero = () => {
  return(
-  <div className="mt-20 xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 flex flex-col gap-5">
+  <div className="mt-20 xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 flex flex-col gap-5 px-5 lg:px-0">
     <div className="flex items-center  ">
-      <h1 className="font-bricolage xl:text-[90px] lg:text-[70px] md:text-[50px] sm:text-[30px] leading-tight">
+      <h1 className="font-bricolage xl:text-[90px] lg:text-[70px] md:text-[50px] text-[30px] leading-tight">
         Hey, I’m Uma
         <span className="inline-block align-middle ml-1">
           <Image
@@ -14,7 +14,7 @@ const Hero = () => {
             alt="uma"
             width={50}
             height={50}
-            className="w-15 h-15"
+            className="md:w-15 md:h-15 sm:w-10 sm:h-10 w-7 h-7"
           />
         </span>
         I design things that feel like a friendly chat
@@ -24,7 +24,7 @@ const Hero = () => {
             alt="uma"
             width={50}
             height={50}
-            className="w-20 h-20"
+            className="md:w-20 md:h-20 sm:w-10 sm:h-10 w-7 h-7"
           />
         </span>
       </h1>
