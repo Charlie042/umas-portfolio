@@ -33,7 +33,7 @@ const NavigationBar = () => {
     ]
 
   return (
-    <nav className="flex justify-between items-center max-w-[1400px] mx-auto py-5">
+    <nav className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-5">
       <div className="mx-5 lg:mx-0">
         <Image
           src="/umaanidi.png"
@@ -85,7 +85,7 @@ const NavigationBar = () => {
                   key={item.label}
                   href={item.href}
                   className={`hover:bg-[#F4F4F4] w-full text-center p-3 rounded-lg text-[#2f7d96] hover:text-[#56CCF2] ${
-                    pathname === item.href ? "bg-[#F4F4F4] text-[#56CCF2] font-bold" : ""
+                    pathname === item.href ? "text-white bg-[#56CCF2] font-semibold" : ""
                   }`}
                 >
                   {item.label}

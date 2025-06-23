@@ -4,7 +4,7 @@ import WhatIKnow from "@/components/About-me/what-i-know";
 
 const AboutMe = () => {
   return (
-    <section className="mx-40">
+    <section className="xl:mx-40 lg:mx-20 mx-5">
       <About />
       <FourPhase />
       <WhatIKnow/>

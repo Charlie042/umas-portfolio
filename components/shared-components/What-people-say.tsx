@@ -32,12 +32,12 @@ const WhatPeopleSay = () => {
               spaceBetween: 10,
             },
             1024: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 5,
             },
             1400: {
               slidesPerView: 5,
-              spaceBetween: 10,
+              spaceBetween: 5,
             },
           }}
           loop={true}

@@ -15,7 +15,7 @@ const FourPhase = () => {
           enough to keep us honest.
         </p>
       </div>
-      <div className="grid grid-cols-2 gap-10 my-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20">
         <AboutMeCard
           title="Discover & Connect"
           description="I start by chatting with anyone who’ll talk, real users, support folks, stakeholders, even that one friend who “just pokes around apps.” I jot down frustrations, delights, and wild ideas. By the end of this phase, we have a clear problem statement and a handful of “aha” insights."
