@@ -9,25 +9,21 @@
   --card-ash: #FFF9F3;
   --card-red: #7A3838;
   --card-purple: #DACEFF;
-  --font-sotashi: "Sotashi";
-  --font-bricolage: "Bricolage Grotesque";
-
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-satoshi);
+  --font-bricolage: var(--font-bricolage);
+
   --color-card-yellow: var(--card-yellow);
   --color-card-black: var(--card-black);
   --color-card-blue: var(--card-blue);
   --color-card-ash: var(--card-ash);
   --color-card-red: var(--card-red);
   --color-card-purple: var(--card-purple);
-  --font-sotashi: var(--font-sotashi);
-  --font-sotashi-italic: var(--font-sotashi-italic);
-  --font-bricolage: var(--font-bricolage);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,38 +33,8 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sotashi);
-}
-
 @layer base {
-  * {
-    @apply font-sotashi;
-  }
   body {
     @apply bg-background text-foreground;
-  }
-  :root {
-    --font-sotashi: "Sotashi";
-  }
-}
-
-@layer utilities {
-  .font-sotashi {
-    font-family: var(--font-sotashi);
-  }
-  .font-sotashi-medium {
-    font-weight: 600;
-  }
-  .font-sotashi-black {
-    font-weight: 900;
-  }
-  .font-sotashi-italic {
-    font-style: italic;
-  }
-  .font-bricolage {
-    font-family: var(--font-bricolage);
   }
 }

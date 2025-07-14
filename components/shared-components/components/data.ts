@@ -1,3 +1,5 @@
+import { featuredCardProps } from "@/components/Home/featured-card";
+
 export const data = [
   {
     id: 1,
@@ -117,5 +119,115 @@ export const badgeData = [
     id: 5,
     name: "UX Writing",
     icon: "/writing.svg",
+  },
+];
+
+
+export const featuredWorksData: featuredCardProps[] = [
+  {
+    id: 1,
+    bgColor: "bg-[#FFE66D]",
+    badgeYear: "2024",
+    badgeTitle: "Branding, Web & Mobile",
+    badgeColor: "bg-[#FFF2B6] text-[#1E1E1E]]",
+    cardTitle:
+      "Building Serene’s Anonymous Support Platform to Spark More User Engagement",
+    description:
+      "Serene was our attempt to make asking for help feel less scary, less clinical, and more like talking to someone who gets it. I led UX research, designed intuitive flows, and added just enough structure for people to feel guided, without feeling watched.",
+    percentForty: "Expected rise in first-time sign-ups",
+    percentSixty: "Projected increase in session completions",
+    cardImage: "/serene-large.png",
+    textColor: "text-[#444444]",
+    titleColor: "text-[#1E1E1E]",
+    percent1: "60%",
+    percent2: "40%",
+  },
+  {
+    id: 2,
+    bgColor: "bg-[#1E1E1E]",
+    badgeYear: "2024",
+    badgeTitle: "Landing Page",
+    badgeColor: "bg-[#444444] text-[#DEDEDE]",
+    cardTitle: "Redesigning Vimedra’s Landing Page to Drive Conversions",
+    description:
+      "I reimagined the hero, features, and CTAs to tell a clear MedTech story and boost demo requests.",
+    percentForty: "Projected demo click lift",
+    percentSixty: "Faster message comprehension",
+    cardImage: "/vimedra.png",
+    textColor: "text-[#D0D0D0]",
+    titleColor: "text-[#FFFFFF]",
+    percent1: "60%",
+    percent2: "45%",
+  },
+  {
+    id: 3,
+    bgColor: "bg-[#56CCF2]",
+    badgeYear: "2024",
+    badgeTitle: "Branding & Mobile",
+    badgeColor: "bg-[#8EDDF6] text-[#1E1E1E]",
+    cardTitle: "Redesigning Vimedra’s Landing Page to Drive Conversions",
+    description:
+      "Serene was our attempt to make asking for help feel less scary, less clinical, and more like talking to someone who gets it. I led UX research, designed intuitive flows, and added just enough structure for people to feel guided, without feeling watched.",
+    percentForty: "Projected demo click lift",
+    percentSixty: "Faster message comprehension",
+    cardImage: "/Buddy.png",
+    textColor: "text-[#444444]",
+    titleColor: "text-[#00000]",
+    percent1: "60%",
+    percent2: "45%",
+  },
+  {
+    id: 4,
+    bgColor: "bg-[#F2EAE2]",
+    badgeYear: "2024",
+    badgeTitle: "Web & Mobile",
+    badgeColor: "bg-[#FFF9F3] text-[#1E1E1E]",
+    cardTitle:
+      "Designing Bias-Free Career Platform’s Masked Application Flow to Promote Fair Hiring",
+    description:
+      "A responsive platform hiding candidate identities until interview to eliminate bias, conceptualized and prototyped end-to-end.",
+    percentForty: "Increased qualified candidate matches",
+    percentSixty: "Reduced hiring bias",
+    cardImage: "/Bias-free.png",
+    textColor: "text-[#444444]",
+    titleColor: "text-[#000000]",
+    percent1: "25%",
+    percent2: "45%",
+  },
+  {
+    id: 5,
+    bgColor: "bg-[#FF8D8D]",
+    badgeYear: "2024",
+    badgeTitle: "Branding & Mobile",
+    badgeColor: "bg-[#FFB3B3] text-[#1E1E1E]",
+    cardTitle:
+      "Leading UX Design for Neowork’s Intelligent Matching to Increase Job Fill Rate",
+    description:
+      "I built an on-demand job platform that connects employers and taskers in real time—ensuring efficient matches and secure, escrow-based payments as the Product Designer.",
+    percentForty: "Projected user satisfaction",
+    percentSixty: "Projected match accuracy",
+    cardImage: "/Neowork.png",
+    textColor: "text-[#7A3838]",
+    titleColor: "text-[#130909]",
+    percent1: "70%",
+    percent2: "75%",
+  },
+  {
+    id: 6,
+    bgColor: "bg-[#C8B6FF]",
+    badgeYear: "2024",
+    badgeTitle: "Mobile",
+    badgeColor: "bg-[#D6C8FF] text-[#1E1E1E]",
+    cardTitle:
+      "Streamlining Brandit’s AI Brand Asset Generator to Save Designers Time & Empower Small Business Owners",
+    description:
+      "Designed an AI-powered tool that automates logo, color, and font selection—letting designers focus on creativity and small business owners get affordable, consistent branding.",
+    percentForty: "Projected reduction in design setup time",
+    percentSixty: "Cost savings for small businesses",
+    cardImage: "/Brandit.png",
+    textColor: "text-[#444444]",
+    titleColor: "text-[#000000]",
+    percent1: "50%",
+    percent2: "70%",
   },
 ];

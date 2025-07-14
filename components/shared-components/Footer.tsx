@@ -31,7 +31,7 @@ const Footer = () => {
             Let’s connect here
           </h4>
           <div className="flex items-center gap-4">
-            <p className="text-[#8B8B8B] text-lg">Say Hello!</p>
+            <p className="text-[#8B8B8B] text-lg font-medium">Say Hello!</p>
             <span className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full">
               <FaLinkedin className="w-5 h-5" />
             </span>
@@ -44,12 +44,12 @@ const Footer = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center lg:mx-40 ">
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-2 text-[#828282] text-lg hover:bg-[#F4F4F4] p-2 rounded-full cursor-pointer"
+          className="flex items-center gap-2 text-[#828282] text-lg font-medium hover:bg-[#F4F4F4] p-2 rounded-full cursor-pointer"
         >
           Back to top <IoIosArrowRoundUp className="w-5 h-5" />
         </button>
         <div>
-          <h4 className="text-lg text-[#828282] flex gap-3">
+          <h4 className="text-lg text-[#828282] font-medium flex gap-3">
             Designed with
             <span className=" align-middle ml-1 bg-[#ECE6FF] w-7 h-7 rounded-full flex items-center justify-center">
               <Image src="/coffee.png" alt="heart" width={20} height={20} />
@@ -62,19 +62,19 @@ const Footer = () => {
           </h4>
         </div>
         <div className="flex items-center gap-2 text-[#828282] text-lg my-10">
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 font-medium">
             <span>
               <Link href="https://www.linkedin.com/in/umaanidi/">Behance</Link>
             </span>
             <HiArrowUpRight className="w-5 h-5" />
           </p>
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 font-medium">
             <span>
               <Link href="https://www.linkedin.com/in/umaanidi/">Dribbble</Link>
             </span>
             <HiArrowUpRight className="w-5 h-5" />
           </p>
-          <p className="flex items-center gap-2">
+          <p className="flex items-center gap-2 font-medium">
             <span>
               <Link href="https://www.linkedin.com/in/umaanidi/">Resume</Link>
             </span>

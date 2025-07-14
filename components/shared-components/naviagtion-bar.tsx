@@ -44,15 +44,15 @@ const NavigationBar = () => {
         />
       </div>
       <div className="hidden lg:block">
-        <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2 rounded-full">
+        <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2  rounded-full">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`cursor-pointer text-[14px] px-4  ${
+              className={`cursor-pointer text-[16px] px-4 py-1  ${
                 pathname === item.href
                   ? "bg-[#56CCF2] rounded-full px-4 font-medium"
-                  : "text-black font-extralight"
+                  : "text-black font-normal"
               }`}
             >
               {item.label}

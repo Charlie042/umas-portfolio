@@ -1,16 +1,47 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , Bricolage_Grotesque} from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { NavigationBar, WhatPeopleSay, Footer } from "@/components/shared-components";
+import {
+  NavigationBar,
+  WhatPeopleSay,
+  Footer,
+} from "@/components/shared-components";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: [
+    {
+      path: "../public/satoshi/Satoshi-Light.otf",
+      weight: "300",
+      style: "light",
+    },
+    {
+      path: "../public/satoshi/Satoshi-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/satoshi/Satoshi-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/satoshi/Satoshi-Medium.otf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../public/satoshi/Satoshi-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "../public/satoshi/Satoshi-Black.otf",
+      weight: "900",
+      style: "black",
+    },
+  ],
+  variable: "--font-satoshi",
 });
 
 const bricolage = Bricolage_Grotesque({
@@ -31,12 +62,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable} antialiased`}
+        className={`${satoshi.variable} ${bricolage.variable} font-sans antialiased`}
       >
         <NavigationBar />
-        {children}
-        <WhatPeopleSay />
-        <Footer />
+        <main>{children}</main>
+        <footer className="h-screen isolate">
+          <WhatPeopleSay />
+          <Footer />
+        </footer>
       </body>
     </html>
   );

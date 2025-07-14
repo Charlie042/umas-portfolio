@@ -13,7 +13,7 @@ interface CardProps {
 const Card = ({description, name, job, image, bgColor, borderColor}: CardProps) => {
   return (
     <div
-      className={`${bgColor} ${borderColor} max-w-[280px] h-[360px] border rounded-xl px-3 py-5 flex flex-col justify-between`}
+      className={`${bgColor} ${borderColor} max-w-[281px] h-[360px] border rounded-xl px-3 py-5 flex flex-col justify-between`}
     >
       <div className="flex flex-col gap-4  ">
         <FaQuoteLeft className="w-7 h-7 text-[#DCDCDC]" />
