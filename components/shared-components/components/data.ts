@@ -1,4 +1,5 @@
 import { featuredCardProps } from "@/components/Home/featured-card";
+import { MotionValue } from "motion/react";
 
 export const data = [
   {
@@ -141,6 +142,10 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#1E1E1E]",
     percent1: "60%",
     percent2: "40%",
+    idx: 0,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
   {
     id: 2,
@@ -158,6 +163,10 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#FFFFFF]",
     percent1: "60%",
     percent2: "45%",
+    idx: 1,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
   {
     id: 3,
@@ -175,6 +184,10 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#00000]",
     percent1: "60%",
     percent2: "45%",
+    idx: 2,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
   {
     id: 4,
@@ -193,6 +206,10 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#000000]",
     percent1: "25%",
     percent2: "45%",
+    idx: 3,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
   {
     id: 5,
@@ -211,6 +228,10 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#130909]",
     percent1: "70%",
     percent2: "75%",
+    idx: 4,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
   {
     id: 6,
@@ -229,5 +250,9 @@ export const featuredWorksData: featuredCardProps[] = [
     titleColor: "text-[#000000]",
     percent1: "50%",
     percent2: "70%",
+    idx: 5,
+    range: [0, 1],
+    target: 1,
+    progress: new MotionValue(0),
   },
 ];

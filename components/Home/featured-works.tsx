@@ -1,8 +1,33 @@
+"use client"
 import FeaturedCard from "./featured-card";
 import { featuredWorksData } from "../shared-components/components/data";
+import {motion, useScroll} from "motion/react"
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
 const FeaturedWorks = () => {
+const ref = useRef(null);
+const {scrollYProgress} = useScroll({
+  target: ref,
+  offset: ["start start", "end end"]
+})
+
+useEffect(() => {
+  // Initialize Lenis
+  const lenis = new Lenis();
+
+  // Use requestAnimationFrame to continuously update the scroll
+  function raf(time: number) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}, []);
+
+
+
   return (
-    <section className="xl:mx-40 lg:mx-20 md:mx-10 sm:mx-5 min-h-lvw relative overflow-hidden">
+    <section className="xl:mx-20 lg:mx-20 md:mx-10 sm:mx-5 min-h-lvw relative ">
       <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
         Featured Works
       </h3>
@@ -11,12 +36,22 @@ const FeaturedWorks = () => {
           Here are some of my best works so far.
         </p>
       </div>
-      <div className="my-20 flex flex-col gap-3 relative h-full isolate">
-        <div className="flex flex-col gap-3">
-          {featuredWorksData.map((item) => (
-            <FeaturedCard key={item.id} {...item} />
-          ))}
-        </div>
+      <div ref={ref} className=" mt-[20vh] mb-[100vh]">
+          {featuredWorksData.map((item,idx) => 
+          {
+            const target = 1 - ((featuredWorksData.length - idx) * 0.05)
+            return (
+              <FeaturedCard
+                key={idx}
+                {...item}
+                idx={idx}
+                range={[idx * 0.2, 1]}
+                target={target}
+                progress={scrollYProgress}
+              />
+            );
+          }
+          )}
       </div>
     </section>
   );
