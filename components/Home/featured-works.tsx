@@ -36,22 +36,20 @@ useEffect(() => {
           Here are some of my best works so far.
         </p>
       </div>
-      <div ref={ref} className=" mt-[20vh] mb-[100vh]">
-          {featuredWorksData.map((item,idx) => 
-          {
-            const target = 1 - ((featuredWorksData.length - idx) * 0.05)
-            return (
-              <FeaturedCard
-                key={idx}
-                {...item}
-                idx={idx}
-                range={[idx * 0.2, 1]}
-                target={target}
-                progress={scrollYProgress}
-              />
-            );
-          }
-          )}
+      <div id="featured-works" ref={ref} className=" mt-[30vh] mb-[100vh]">
+        {featuredWorksData.map((item, idx) => {
+          const target = 1 - (featuredWorksData.length - idx) * 0.05;
+          return (
+            <FeaturedCard
+              key={idx}
+              {...item}
+              idx={idx}
+              range={[idx * 0.2, 1]}
+              target={target}
+              progress={scrollYProgress}
+            />
+          );
+        })}
       </div>
     </section>
   );
