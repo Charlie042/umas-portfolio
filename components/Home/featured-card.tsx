@@ -121,3 +121,13 @@ const FeaturedCard = ({
 };
 
 export default FeaturedCard;
+
+export const Spine = () => {
+  return (
+    <div className="w-[79px] h-[270px] bg-[#FF8D8D] flex items-center relative overflow-hidden ">
+      <div className="w-[125px] bg-white h-[70px] rotate-155 absolute -top-10 -left-10  "></div>
+      <div className="w-[125px] bg-white h-[70px] rotate-15 absolute -bottom-10 -left-10  "></div>
+      <div className="w-[25px] bg-[#FF8D8D] h-[80px] rounded-lg  rotate-67 absolute  top-0  left-[25px]  "></div>
+    </div>
+  );
+};
