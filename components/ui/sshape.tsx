@@ -1,0 +1,33 @@
+import React from "react";
+
+interface SShapeProps {
+  color?: string;
+  width?: number;
+  height?: number;
+  className?: string;
+}
+
+const SShape: React.FC<SShapeProps> = ({
+  color = "#353434",
+  width = 44,
+  height = 45,
+  className = "",
+}) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 44 45"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M0 15.1937C0 13.8872 0.845455 12.731 2.09039 12.3349L40.0904 0.243967C42.0252 -0.371662 44 1.07233 44 3.10274V41.8973C44 43.9277 42.0252 45.3717 40.0904 44.756L2.09039 32.6651C0.845455 32.269 0 31.1128 0 29.8063V15.1937Z"
+        fill={color}
+      />
+    </svg>
+  );
+};
+
+export default SShape;

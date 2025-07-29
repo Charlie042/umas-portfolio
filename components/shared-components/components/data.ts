@@ -1,5 +1,6 @@
 import { featuredCardProps } from "@/components/Home/featured-card";
 import { MotionValue } from "motion/react";
+import { sereneIcon, vimedraIcon, buddyIcon, biasFreeIcon, neoworkIcon, branditIcon } from "@/public";
 
 export const data = [
   {
@@ -146,6 +147,10 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
+    shapeColor: "#D4C05B",
+    shapeColor2: "#F0DA6C",
+    shapeName: "Serene",
+    shapeImage: sereneIcon,
   },
   {
     id: 2,
@@ -167,7 +172,11 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
-  },
+    shapeColor: "#0A0A0A",
+    shapeColor2: "#353434",
+    shapeName: "Vimedra",
+    shapeImage: vimedraIcon,
+    },
   {
     id: 3,
     bgColor: "bg-[#56CCF2]",
@@ -188,6 +197,10 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
+    shapeColor: "#48AACA",
+    shapeColor2: "#3094B5",
+    shapeName: "Buddy",
+    shapeImage: buddyIcon,
   },
   {
     id: 4,
@@ -210,6 +223,10 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
+    shapeColor: "#CAC3BC",
+    shapeColor2: "#E1D8CF",
+    shapeName: "Bias Free",
+    shapeImage: biasFreeIcon,
   },
   {
     id: 5,
@@ -232,6 +249,10 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
+    shapeColor: "#D47676",
+    shapeColor2: "#BB5959",
+    shapeName: "Neowork",
+    shapeImage: neoworkIcon,
   },
   {
     id: 6,
@@ -254,5 +275,9 @@ export const featuredWorksData: featuredCardProps[] = [
     range: [0, 1],
     target: 1,
     progress: new MotionValue(0),
+    shapeColor: "#A798D4",
+    shapeColor2: "#C2B4EC",
+    shapeName: "Brandit",
+    shapeImage: branditIcon,
   },
 ];
