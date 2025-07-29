@@ -44,7 +44,7 @@ const NavigationBar = () => {
         />
       </div>
       <div className="hidden lg:block">
-        <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2  rounded-full">
+        <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2  rounded-full sticky top-0">
           {navItems.map((item) => (
             <Link
               key={item.label}

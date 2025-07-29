@@ -38,3 +38,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.clip-spine {
+  clip-path: polygon(100% 0, 100% 100%, 25% 100%, 0 90%, 0 10%, 25% 0);
+}

@@ -69,7 +69,7 @@ export default function RootLayout({
         <footer className="h-screen isolate">
           <WhatPeopleSay />
           <Footer />
-        </footer>
+        </footer>j
       </body>
     </html>
   );
