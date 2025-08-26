@@ -6,6 +6,7 @@ import {
   NavigationBar,
   WhatPeopleSay,
   Footer,
+  ConditionalWhatIKnow,
 } from "@/components/shared-components";
 
 const satoshi = localFont({
@@ -70,6 +71,7 @@ export default function RootLayout({
         </div>
 
         <footer className="h-screen isolate">
+          <ConditionalWhatIKnow />
           <WhatPeopleSay />
           <Footer />
         </footer>

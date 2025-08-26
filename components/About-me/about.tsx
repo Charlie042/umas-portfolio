@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className=" my-20 text-center font-sotashi text-xl flex flex-col gap-5">
+    <div className="mx-5 md:mx-20 lg:mx-40 xl:mx-70 my-20 text-center font-sotashi  text-sm md:text-lg lg:text-xl flex flex-col gap-5">
       <p>
         I’ve always been that kid who jumps into everything, product design,
         sewing, a little writing… even tried web dev once (lol, don’t ask 😭).

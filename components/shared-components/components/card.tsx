@@ -17,7 +17,7 @@ const Card = ({description, name, job, image, bgColor, borderColor}: CardProps) 
     >
       <div className="flex flex-col gap-4  ">
         <FaQuoteLeft className="w-7 h-7 text-[#DCDCDC]" />
-        <p className="font-sotashi font-[510] text-[#1E1E1E] text-base">{description}</p>
+        <p className="font-sotashi font-medium text-[#1E1E1E] text-base">{description}</p>
       </div>
       <div className="flex items-center gap-2">
         <Image
@@ -25,10 +25,10 @@ const Card = ({description, name, job, image, bgColor, borderColor}: CardProps) 
           alt={name}
           width={100}
           height={100}
-          className="w-15 h-15"
+          className="w-15 h-15  rounded-full"
         />
         <div>
-          <p className="font-sotashi text-[#1E1E1E] font-bold">{name}</p>
+          <p className="font-sotashi text-[#1E1E1E] font-semibold">{name}</p>
           <p className="font-sotashi text-[#4F4F4F] font-normal">{job}</p>
         </div>
       </div>

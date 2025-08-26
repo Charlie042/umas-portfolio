@@ -28,11 +28,11 @@ useEffect(() => {
 
   return (
     <section className="sm:mx-5 min-h-lvw relative ">
-      <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
+      <h3 className="px-2 md:px-0 font-bricolage text-[#1E1E1E] text-xl md:text-3xl font-bold ">
         Featured Works
       </h3>
-      <div className="flex">
-        <p className=" text-xl text-[#696969] max-w-245 mt-5 font-medium">
+      <div className="flex px-2 md:px-0">
+        <p className=" text-sm md:text-xl text-[#696969] max-w-245 mt-2 md:mt-5 font-medium">
           Here are some of my best works so far.
         </p>
       </div>

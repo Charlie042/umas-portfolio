@@ -86,7 +86,7 @@ const FeaturedCard = ({
       >
         <div className="hidden md:flex justify-between item-center relative">
           <div className="absolute isolate">
-            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative  w-30 border ">
+            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative  w-30">
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
               <div className="absolute isolate  z-50">
                 <Image
