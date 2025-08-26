@@ -7,7 +7,6 @@ const AboutMe = () => {
     <section className="">
       <About />
       <FourPhase />
-      <WhatIKnow/>
     </section>
   );
 };

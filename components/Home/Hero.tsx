@@ -3,8 +3,40 @@ import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { FaArrowDown } from "react-icons/fa6";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      const start = 5;
+      const end = 10;
+
+      video.currentTime = start;
+
+      let rafId: number;
+
+      const checkLoop = () => {
+        if (video.currentTime >= end) {
+          video.currentTime = start;
+          video.play();
+        }
+        rafId = requestAnimationFrame(checkLoop);
+      };
+
+      video.play();
+      rafId = requestAnimationFrame(checkLoop);
+
+      return () => cancelAnimationFrame(rafId);
+    }, []);
+
+
+
+
+
     const scrollToFeatured = () => {
         const featuredElement = document.getElementById('featured-works');
         if (featuredElement) {
@@ -13,7 +45,7 @@ const Hero = () => {
     };
 
  return (
-   <div className="mt-20  flex flex-col gap-5 px-5 h-[80vh]">
+   <div className="mt-5 md:mt-20  flex flex-col gap-5 px-5 h-[80vh]">
      <div className="flex items-center">
        <h1 className="lg:relative font-bricolage  xl:text-[90px] lg:text-[70px] md:text-[50px] text-[30px] leading-tight font-medium text-[#1E1E1E] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-6px]">
          Hey, I’m Uma
@@ -53,20 +85,25 @@ const Hero = () => {
            <IoMdMail className="w-3 h-3 md:w-5 md:h-5" />
          </span>
        </div>
-       <div className="w-300">
+       <div className="w-300 hidden md:block">
          <video
+           ref={videoRef}
            src="/219615.mp4"
            autoPlay
            muted
            loop
+           playsInline
            className="object-cover"
          />
        </div>
      </div>
-     <div className="flex justify-center">
-        <button onClick={scrollToFeatured} className="animate-bounce bg-white p-2 w-10 h-10 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer">
-            <FaArrowDown className="w-6 h-6 text-[#1E1E1E]" />
-        </button>
+     <div className="flex justify-center mt-20 md:mt-0">
+       <button
+         onClick={scrollToFeatured}
+         className="animate-bounce bg-white p-2 w-10 h-10 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer"
+       >
+         <FaArrowDown className="w-6 h-6 text-[#1E1E1E]" />
+       </button>
      </div>
    </div>
  );

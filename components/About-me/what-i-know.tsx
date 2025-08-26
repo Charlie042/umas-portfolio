@@ -47,13 +47,13 @@ const WhatIKnow = () => {
       </h2>
 
       <div
-        className="embla mt-10 max-w-300 mx-auto relative"
+        className="embla mt-10 max-w-400 mx-auto relative"
         ref={containerRef}
       >
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-white/70 to-transparent z-10 hidden md:block" />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-white/70 to-transparent z-10 hidden md:block" />
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-white  z-10 hidden md:block" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-white  z-10 hidden md:block" />
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
-          <div className="embla__container flex gap-20">
+          <div className="embla__container flex gap-5">
             {badgeData.map((item) => (
               <div key={item.id} className="embla__slide flex-[0_0_auto] px-4">
                 <Badge name={item.name} icon={item.icon} />

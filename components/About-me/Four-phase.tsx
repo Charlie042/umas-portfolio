@@ -2,12 +2,12 @@ import AboutMeCard from "./components/About-me-card";
 
 const FourPhase = () => {
   return (
-    <div>
+    <div className="mx-5 lg:mx-3 xl:mx-0">
       <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
         My Four-Phase Design Process
       </h3>
       <div className="flex">
-        <p className="font-sotashi text-xl text-[#696969] max-w-245 mt-5 ">
+        <p className="font-sotashi  text-sm md:text-lg lg:text-xl text-[#696969] max-w-245 mt-5 ">
           After 3+ years of sketching interfaces, shipping apps, and
           (occasionally) designing doodles that never see the light of day, I’ve
           settled into a four-step rhythm that feels both human and focused.
