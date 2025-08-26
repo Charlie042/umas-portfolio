@@ -1,7 +1,7 @@
 import { Playground1, Playground2, Playground3 } from "@/components/playground";
   const Playground = () => {
   return (
-    <section className="mx-40 my-20">
+    <section className=" my-20">
       <div className="flex flex-col gap-5">
         <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold">
           My Playground

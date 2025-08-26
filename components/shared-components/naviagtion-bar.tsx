@@ -33,13 +33,14 @@ const NavigationBar = () => {
     ]
 
   return (
-    <nav className="flex justify-between items-center max-w-[1400px] mx-auto py-5 px-5">
+    <nav className="flex justify-between items-center py-5 px-5">
       <div className="mx-5 lg:mx-0">
         <Image
           src="/umaanidi.png"
           alt="logo"
           width={100}
           height={100}
+          priority
           className="max-sm:w-20 "
         />
       </div>
