@@ -1,18 +1,19 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useRef } from "react";
 import { Badge } from "../ui/badge";
 import { cn } from "@/lib/utils";
 import { IoMdArrowForward } from "react-icons/io";
 import { StaticImageData } from "next/image";
-import { motion, useScroll, useTransform, MotionValue  } from "motion/react";
+import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import Shape from "../ui/shape";
 import SShape from "../ui/sshape";
+import { useMediaQuery } from "usehooks-ts";
 
 export interface featuredCardProps {
   id: number;
-  bgColor: string;  
-  badgeColor: string
+  bgColor: string;
+  badgeColor: string;
   badgeYear: string;
   badgeTitle: string;
   cardTitle: string;
@@ -35,7 +36,7 @@ export interface featuredCardProps {
 }
 const FeaturedCard = ({
   id,
-  bgColor,  
+  bgColor,
   badgeColor,
   badgeYear,
   badgeTitle,
@@ -55,46 +56,58 @@ const FeaturedCard = ({
   shapeColor,
   shapeColor2,
   shapeName,
-  shapeImage
+  shapeImage,
 }: featuredCardProps) => {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({
-      target: ref,
-      offset: ["start end", "start start"]
-    });
-    const ImageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
-    const scale = useTransform(progress, range, [1,target])
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"],
+  });
+  const ImageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(progress, range, [1, target]);
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <div
       ref={ref}
-      className={cn(" max-w-[1160px] h-screen mx-auto sticky top-0")}
+      className={cn(" max-w-[102vw] h-[70vh] mx-auto sticky top-10")}
     >
       <motion.div
         className={cn(
-          "my-10 space-y-5 w-[1190px] h-screen  p-5  rounded-lg rounded-tl-none relative ",
+          "my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative ",
           bgColor,
           textColor
         )}
-        style={{ top: `calc(2% + ${idx * 50}px)`, scale: scale }}
+        style={{
+          top: isMobile
+            ? `calc(2% + ${idx * 50}px)`
+            : `calc(2% + ${idx * 50}px)`,
+          scale: scale,
+        }}
       >
-        <div className="flex justify-between item-center relative">
-          <div className="absolute isolate ">
-            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative  w-30">
+        <div className="hidden md:flex justify-between item-center relative">
+          <div className="absolute isolate">
+            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative  w-30 border ">
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
               <div className="absolute isolate  z-50">
-                  <Image src={shapeImage} alt="shape" width={50} height={50} className="relative z-50 top-2 right-22 rotate-270 w-6 h-6"/>
-                  <SShape
+                <Image
+                  src={shapeImage}
+                  alt="shape"
+                  width={50}
+                  height={50}
+                  className="relative z-50 top-2 right-22 rotate-270 w-6 h-6"
+                />
+                <SShape
                   className="absolute -top-1 -left-25  rotate-270"
                   color={shapeColor2}
                 />
               </div>
-              
             </div>
+            {/* TODO: make this a responsive shape */}
             <Shape className="absolute -top-5 -left-25" color={shapeColor} />
           </div>
           <Badge
             className={cn(
-              "flex justify-center rounded-full text-base px-5 py-1",
+              "flex justify-center rounded-full text-xs xl:text-base  px-2 xl:px-5 py-1",
               badgeColor
             )}
           >
@@ -102,33 +115,43 @@ const FeaturedCard = ({
           </Badge>
           <Badge
             className={cn(
-              "flex justify-center rounded-full text-base px-5 py-1",
+              "flex justify-center rounded-full text-xs xl:text-base px-2 xl:px-5 py-1",
               badgeColor
             )}
           >
             {badgeTitle}
           </Badge>
         </div>
-        <div className="flex justify-between item-center">
-          <div className="max-w-[918px] w-full space-y-5">
-            <h1 className={cn(titleColor, "text-4xl font-bold font-bricolage")}>
+        <div className="flex justify-between item-center px-2">
+          <div className="md:max-w-[895px] w-full space-y-5">
+            <h1
+              className={cn(
+                titleColor,
+                "text-md leading-tight md:text-2xl xl:text-3xl font-semibold font-bricolage flex items-center justify-between"
+              )}
+            >
               {cardTitle}
+              <span className="text-sm md:hidden self-start">
+                <IoMdArrowForward className="text-lg" />
+              </span>
             </h1>
-            <p className="text-base font-medium ">{description}</p>
+            <p className=" text-xs md:text-sm lg:text-base font-medium ">{description}</p>
           </div>
-          <IoMdArrowForward className="text-7xl" />
+          <IoMdArrowForward className="text-5xl hidden md:block" />
         </div>
         <div className="flex justify-between gap-10 max-w-[725px] w-full ">
-          <div className="flex flex-col gap-3">
-            <p className={cn(titleColor, "text-2xl font-bold")}>{percent1}</p>
-            <p className="text-base font-medium">{percentSixty}</p>
+          <div className="flex flex-col lg:gap-3">
+            <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>{percent1}</p>
+            <p className="text-sm lg:text-base font-medium">{percentSixty}</p>
           </div>
-          <div className="flex flex-col gap-3">
-            <p className={cn(titleColor, "text-2xl font-bold")}>{percent2}</p>
-            <p className="text-base font-medium">{percentForty}</p>
+          <div className="flex flex-col lg:gap-3">
+            <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>
+              {percent2}
+            </p>
+            <p className="text-sm lg:text-base font-medium">{percentForty}</p>
           </div>
         </div>
-        <motion.div className="max-w-[1089px] min-h-[400px] rounded-lg mx-auto my-10 w-full relative isolate overflow-hidden">
+        <motion.div className="max-w-[800px] lg:max-w-[1089px] min-h-[200px] lg:min-h-[300px] rounded-lg mx-auto my-10 w-full relative isolate overflow-hidden">
           <motion.div
             style={{ scale: ImageScale }}
             className="absolute top-0 left-0 w-full h-full "

@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="xl:mx-90 lg:mx-10  my-20 text-center font-sotashi text-xl flex flex-col gap-5">
+    <div className=" my-20 text-center font-sotashi text-xl flex flex-col gap-5">
       <p>
         I’ve always been that kid who jumps into everything, product design,
         sewing, a little writing… even tried web dev once (lol, don’t ask 😭).

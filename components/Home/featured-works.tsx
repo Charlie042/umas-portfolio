@@ -27,7 +27,7 @@ useEffect(() => {
 
 
   return (
-    <section className="xl:mx-20 lg:mx-20 md:mx-10 sm:mx-5 min-h-lvw relative ">
+    <section className="sm:mx-5 min-h-lvw relative ">
       <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
         Featured Works
       </h3>
@@ -36,7 +36,7 @@ useEffect(() => {
           Here are some of my best works so far.
         </p>
       </div>
-      <div id="featured-works" ref={ref} className=" mt-[30vh] mb-[50vh]">
+      <div id="featured-works" ref={ref} className=" mt-20 mb-[50vh]">
         {featuredWorksData.map((item, idx) => {
           // const target = 1 - (featuredWorksData.length - idx) * 0.05;
           return (
