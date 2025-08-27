@@ -1,19 +1,21 @@
+"use client"
+import { motion } from "motion/react";
 import AboutMeCard from "./components/About-me-card";
 
 const FourPhase = () => {
   return (
     <div className="mx-5 lg:mx-3 xl:mx-0">
-      <h3 className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
+      <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut"}} className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
         My Four-Phase Design Process
-      </h3>
+      </motion.h3>
       <div className="flex">
-        <p className="font-sotashi  text-sm md:text-lg lg:text-lg text-[#696969] max-w-245 mt-5 ">
+        <motion.p initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut"}} className="font-sotashi  text-sm md:text-lg lg:text-lg text-[#696969] max-w-245 mt-5 ">
           After 3+ years of sketching interfaces, shipping apps, and
           (occasionally) designing doodles that never see the light of day, I’ve
           settled into a four-step rhythm that feels both human and focused.
           It’s flexible enough to bend around tight deadlines, but structured
           enough to keep us honest.
-        </p>
+        </motion.p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20">
         <AboutMeCard

@@ -12,7 +12,7 @@ import { Playground1, Playground2, Playground3 } from "@/components/playground";
       target: ref,
       offset: ["0 1", "1 1"], 
     });
-    const scale = useTransform(progress1, [0, 1], [0.8, 1]);
+    const scale = useTransform(progress1, [0, 1], [0.5, 1]);
 
 
 
