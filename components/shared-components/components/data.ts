@@ -30,7 +30,7 @@ export const data = [
     job: "Frontend Developer",
     description:
       "She’s fun to work with, always open to feedback, and quick to iterate when something feels off.",
-    image: "/Adaeze.jpg",
+    image: "/Precious.jpg",
     bgColor: "bg-[#F5FCFF]",
     borderColor: "border-[#48AACA]",
   },
@@ -40,7 +40,7 @@ export const data = [
     job: "Product Designer",
     description:
       "Uma has a knack for lifting the whole team’s work. She gives feedback that’s both detailed and empathetic, never vague or overwhelming.",
-    image: "/Precious.jpg",
+    image: "/Adaeze.jpg",
     bgColor: "bg-[#FFFDF2]",
     borderColor: "border-[#C0A522]",
   },
