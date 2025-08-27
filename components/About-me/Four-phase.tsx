@@ -5,11 +5,11 @@ import AboutMeCard from "./components/About-me-card";
 const FourPhase = () => {
   return (
     <div className="mx-5 lg:mx-3 xl:mx-0">
-      <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut"}} className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
+      <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut", delay: 0.5}} className="font-bricolage text-[#1E1E1E] text-3xl font-bold ">
         My Four-Phase Design Process
       </motion.h3>
       <div className="flex">
-        <motion.p initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut"}} className="font-sotashi  text-sm md:text-lg lg:text-lg text-[#696969] max-w-245 mt-5 ">
+        <motion.p initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeInOut", delay: 0.5}} className="font-sotashi  text-sm md:text-lg lg:text-lg text-[#696969] max-w-245 mt-5 ">
           After 3+ years of sketching interfaces, shipping apps, and
           (occasionally) designing doodles that never see the light of day, I’ve
           settled into a four-step rhythm that feels both human and focused.

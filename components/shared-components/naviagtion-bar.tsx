@@ -15,7 +15,6 @@ import { motion } from "motion/react";
 const NavigationBar = () => {
 
     const pathname = usePathname();
-    const [isOpen, setIsOpen] = useState(false);
     const navItems = [
         {
             label: "Works",
@@ -40,7 +39,7 @@ const NavigationBar = () => {
       transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
       className="flex justify-between items-center py-5 px-5"
     >
-      <div className="mx-5 lg:mx-0">
+      <Link href="/" className="mx-5 lg:mx-0">
         <Image
           src="/umaanidi.png"
           alt="logo"
@@ -49,7 +48,7 @@ const NavigationBar = () => {
           priority
           className="max-sm:w-20 "
         />
-      </div>
+      </Link>
       <div className="hidden lg:block">
         <ul className="flex gap-4 bg-[#F4F4F4] py-2 px-2  rounded-full sticky top-0">
           {navItems.map((item) => (
