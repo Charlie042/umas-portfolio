@@ -5,7 +5,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import MenuBar from "./components/menu-bar";
-import { useState } from "react";
 import { Drawer, DrawerContent, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { motion } from "motion/react";
