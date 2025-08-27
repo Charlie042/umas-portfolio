@@ -152,6 +152,8 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#F0DA6C",
     shapeName: "Serene",
     shapeImage: sereneIcon,
+    cursorColor: "bg-[#56CCF2]",
+    link: "https://www.behance.net/gallery/220502515/Mental-Health-Platform",
   },
   {
     id: 2,
@@ -177,7 +179,9 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#353434",
     shapeName: "Vimedra",
     shapeImage: vimedraIcon,
-    },
+    cursorColor: "bg-[#56CCF2]",
+    link: "https://www.behance.net/gallery/226641737/Medtech-Landing-page",
+  },
   {
     id: 3,
     bgColor: "bg-[#56CCF2]",
@@ -202,6 +206,8 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#3094B5",
     shapeName: "Buddy",
     shapeImage: buddyIcon,
+    cursorColor: "bg-[#FFF9F3]",
+    link: "https://www.behance.net/gallery/205870191/Travel-app",
   },
   {
     id: 4,
@@ -228,6 +234,8 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#E1D8CF",
     shapeName: "Bias Free",
     shapeImage: biasFreeIcon,
+    cursorColor: "bg-[#56CCF2]",
+    link: "",
   },
   {
     id: 5,
@@ -254,6 +262,8 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#BB5959",
     shapeName: "Neowork",
     shapeImage: neoworkIcon,
+    cursorColor: "bg-[#D6C8FF]",
+    link: "",
   },
   {
     id: 6,
@@ -280,5 +290,7 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeColor2: "#C2B4EC",
     shapeName: "Brandit",
     shapeImage: branditIcon,
+    cursorColor: "bg-[#FFB3B3]",
+    link: "https://www.behance.net/gallery/196618375/Brand-It-AI-brand-generator",
   },
 ];

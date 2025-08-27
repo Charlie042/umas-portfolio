@@ -9,6 +9,10 @@ import { motion, useScroll, useTransform, MotionValue } from "motion/react";
 import Shape from "../ui/shape";
 import SShape from "../ui/sshape";
 import { useMediaQuery } from "usehooks-ts";
+import { Pointer } from "../magicui/pointer";
+import { ImArrowUpRight2 } from "react-icons/im";
+
+
 
 export interface featuredCardProps {
   id: number;
@@ -33,6 +37,8 @@ export interface featuredCardProps {
   shapeColor2: string;
   shapeName: string;
   shapeImage: string | StaticImageData;
+  link: string;
+  cursorColor: string;
 }
 const FeaturedCard = ({
   id,
@@ -57,6 +63,8 @@ const FeaturedCard = ({
   shapeColor2,
   shapeName,
   shapeImage,
+  link,
+  cursorColor,
 }: featuredCardProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -69,11 +77,19 @@ const FeaturedCard = ({
   return (
     <div
       ref={ref}
-      className={cn(" max-w-[102vw] h-[70vh] mx-auto sticky top-10")}
+      className={cn(
+        " max-w-[102vw] h-[70vh] mx-auto sticky top-10 cursor-pointer"
+      )}
     >
+      <Pointer>
+        <div className={`flex items-center justify-center rounded-full p-2 ${cursorColor}`}>
+          <ImArrowUpRight2 className={`text-sm`} />
+        </div>
+      </Pointer>
       <motion.div
+        onClick={() => window.open(link, "_blank")}
         className={cn(
-          "my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative ",
+          "group my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative",
           bgColor,
           textColor
         )}
@@ -102,7 +118,6 @@ const FeaturedCard = ({
                 />
               </div>
             </div>
-            {/* TODO: make this a responsive shape */}
             <Shape className="absolute -top-5 -left-25" color={shapeColor} />
           </div>
           <Badge
@@ -135,13 +150,17 @@ const FeaturedCard = ({
                 <IoMdArrowForward className="text-lg" />
               </span>
             </h1>
-            <p className=" text-xs md:text-sm lg:text-base font-medium ">{description}</p>
+            <p className=" text-xs md:text-sm lg:text-base font-medium ">
+              {description}
+            </p>
           </div>
-          <IoMdArrowForward className="text-5xl hidden md:block" />
+          <IoMdArrowForward className="text-5xl hidden md:block group-hover:translate-x-2 transition-all duration-300" />
         </div>
         <div className="flex justify-between gap-10 max-w-[725px] w-full ">
           <div className="flex flex-col lg:gap-3">
-            <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>{percent1}</p>
+            <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>
+              {percent1}
+            </p>
             <p className="text-sm lg:text-base font-medium">{percentSixty}</p>
           </div>
           <div className="flex flex-col lg:gap-3">
