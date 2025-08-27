@@ -6,8 +6,9 @@ import { MdEmail } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import MenuBar from "./components/menu-bar";
 import { useState } from "react";
-import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger, DrawerClose, DrawerFooter } from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
 import { RiCloseLargeFill } from "react-icons/ri";
+import { motion } from "motion/react";
 
 
 
@@ -33,7 +34,12 @@ const NavigationBar = () => {
     ]
 
   return (
-    <nav className="flex justify-between items-center py-5 px-5">
+    <motion.nav
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
+      className="flex justify-between items-center py-5 px-5"
+    >
       <div className="mx-5 lg:mx-0">
         <Image
           src="/umaanidi.png"
@@ -62,11 +68,26 @@ const NavigationBar = () => {
         </ul>
       </div>
       <div className=" items-center gap-5 hidden lg:flex">
-        <Link href="/resume" className="text-medium font-medium text-[#1E1E1E]">
+        <Link
+          href="/resume"
+          className="text-medium font-medium text-[#1E1E1E] hover:text-[#FF6B6B] cursor-pointer transition-all duration-300"
+        >
           Resume
         </Link>
-        <FaLinkedin className="text-xl" />
-        <MdEmail className="text-xl" />
+        <Link
+          href="https://www.linkedin.com/in/uma-anidi-"
+          target="_blank"
+          className="text-xl hover:text-[#FF6B6B] cursor-pointer transition-all duration-300"
+        >
+          <FaLinkedin className="text-xl" />
+        </Link>
+        <Link
+          href="mailto:umaanidi@gmail.com"
+          target="_blank"
+          className="text-xl hover:text-[#FF6B6B] cursor-pointer transition-all duration-300"
+        >
+          <MdEmail className="text-xl" />
+        </Link>
       </div>
       <div className="lg:hidden mx-5">
         <Drawer direction="right">
@@ -86,7 +107,9 @@ const NavigationBar = () => {
                   key={item.label}
                   href={item.href}
                   className={`hover:bg-[#F4F4F4] w-full text-center p-3 rounded-lg text-[#2f7d96] hover:text-[#56CCF2] ${
-                    pathname === item.href ? "text-white bg-[#56CCF2] font-semibold" : ""
+                    pathname === item.href
+                      ? "text-white bg-[#56CCF2] font-semibold"
+                      : ""
                   }`}
                 >
                   {item.label}
@@ -96,7 +119,7 @@ const NavigationBar = () => {
           </DrawerContent>
         </Drawer>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

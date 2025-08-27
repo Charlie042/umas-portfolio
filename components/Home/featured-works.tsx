@@ -28,13 +28,13 @@ useEffect(() => {
 
   return (
     <section className="sm:mx-5 min-h-lvw relative ">
-      <h3 className="px-2 md:px-0 font-bricolage text-[#1E1E1E] text-xl md:text-3xl font-bold ">
+      <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, delay: 1, ease: "easeOut"}} className="px-2 md:px-0 font-bricolage text-[#1E1E1E] text-xl md:text-3xl font-bold ">
         Featured Works
-      </h3>
+      </motion.h3>
       <div className="flex px-2 md:px-0">
-        <p className=" text-sm md:text-xl text-[#696969] max-w-245 mt-2 md:mt-5 font-medium">
+        <motion.p initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5, delay: 1.5, ease: "easeOut"}} className=" text-sm md:text-xl text-[#696969] max-w-245 mt-2 md:mt-5 font-medium">
           Here are some of my best works so far.
-        </p>
+        </motion.p>
       </div>
       <div id="featured-works" ref={ref} className=" mt-20 mb-[50vh]">
         {featuredWorksData.map((item, idx) => {
