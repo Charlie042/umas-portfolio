@@ -32,12 +32,12 @@ const Footer = () => {
           </h4>
           <div className="flex items-center gap-4">
             <p className="text-[#8B8B8B] text-lg font-medium">Say Hello!</p>
-            <span className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full">
-              <FaLinkedin className="w-5 h-5" />
-            </span>
-            <span className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-10 h-10 rounded-full">
-              <IoMdMail className="w-5 h-5" />
-            </span>
+            <Link href="https://www.linkedin.com/in/umaanidi/" target="_blank" className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full group">
+              <FaLinkedin className="w-5 h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+            </Link>
+            <Link href="mailto:umaanidi@gmail.com" target="_blank" className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-10 h-10 rounded-full group">
+              <IoMdMail className="w-5 h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+            </Link>
           </div>
         </div>
       </div>
@@ -62,23 +62,23 @@ const Footer = () => {
           </h4>
         </div>
         <div className="flex items-center gap-2 text-[#828282] text-lg my-10">
-          <p className="flex items-center gap-2 font-medium">
+          <p className="flex items-center gap-2 font-medium group">
             <span>
-              <Link href="https://www.linkedin.com/in/umaanidi/">Behance</Link>
+              <Link href="https://www.linkedin.com/in/umaanidi/" className="hover:text-[#56CCF2] transition-all duration-500">Behance</Link>
             </span>
-            <HiArrowUpRight className="w-5 h-5" />
+            <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
-          <p className="flex items-center gap-2 font-medium">
+          <p className="flex items-center gap-2 font-medium group">
             <span>
-              <Link href="https://www.linkedin.com/in/umaanidi/">Dribbble</Link>
+              <Link href="https://www.linkedin.com/in/umaanidi/" className="hover:text-[#56CCF2] transition-all duration-500">Dribbble</Link>
             </span>
-            <HiArrowUpRight className="w-5 h-5" />
+            <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
-          <p className="flex items-center gap-2 font-medium">
+          <p className="flex items-center gap-2 font-medium group">
             <span>
-              <Link href="https://www.linkedin.com/in/umaanidi/">Resume</Link>
+              <Link href="/resume" className="hover:text-[#56CCF2] transition-all duration-500">Resume</Link>
             </span>
-            <HiArrowUpRight className="w-5 h-5" />
+            <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
         </div>
       </div>
