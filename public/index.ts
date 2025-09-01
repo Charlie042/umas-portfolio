@@ -7,7 +7,6 @@ import branditIcon from "./B.svg";
 import thinking from "@/public/thinkIt.png";
 import laptopImg from "@/public/laptopImg.png";
 import savour from "@/public/savour.png";
-import serene from "@/public/serene.png";
 import survey from "@/public/Survey.png";
 import phoneSurvey from "@/public/phonesSavory.png";
 import surveyLarge from "@/public/surveyLarg.png";
@@ -20,6 +19,7 @@ import thinkWearIt from "@/public/thinkWearit.png";
 import phone from "@/public/phones.png";
 import xport from "@/public/xpost.png";
 import phones2 from "@/public/phones2.png";
+import serene from "./sereneSign.svg"
 export {
   sereneIcon,
   vimedraIcon,
@@ -30,7 +30,6 @@ export {
   thinking,
   laptopImg,
   savour,
-  serene,
   survey,
   phoneSurvey,
   surveyLarge,
@@ -43,4 +42,5 @@ export {
   phone,
   xport,
   phones2,
+  serene,
 };

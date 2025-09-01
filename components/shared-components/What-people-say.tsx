@@ -16,8 +16,8 @@ const WhatPeopleSay = () => {
         suppressHydrationWarning={true}
         className="flex justify-center relative my-30  max-w-400 mx-auto px-10 sm:px-0 isolate"
       >
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-[rgba(255, 255, 255, 0)] to-[rgba(255, 255, 255, 1)] z-10 hidden md:block" />
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-[rgba(255, 255, 255, 0)]  to-[rgba(255, 255, 255, 1)] z-10 hidden md:block" />
+        <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-[rgba(255, 255, 255, 0)] to-[rgba(255, 255, 255, 1)] z-10  " />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-[rgba(255, 255, 255, 0)]  to-[rgba(255, 255, 255, 1)] z-10 " />
         <Marquee pauseOnHover className="[--duration:25s] gap-7">
           {data.map((item) => (
             <Card key={item.id} {...item} />
