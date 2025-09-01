@@ -70,21 +70,21 @@ const Hero = () => {
           <motion.span
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease:"easeInOut"}}
           >
             I design things
           </motion.span>{" "}
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2, ease:"easeInOut"}}
           >
             that feel like a friendly chat
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5, ease:"easeInOut"}}
             className="inline-block h-full ml-1 lg:absolute lg:top-39"
           >
             <Image
