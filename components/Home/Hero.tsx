@@ -5,6 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { FaArrowDown } from "react-icons/fa6";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -117,12 +118,12 @@ const Hero = () => {
           <p className="text-[#8B8B8B] font-medium text-sm md:text-lg">
             Say Hello!
           </p>
-          <span className="bg-[#DDF5FC] flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full">
-            <FaLinkedin className="w-3 h-3 md:w-5 md:h-5" />
-          </span>
-          <span className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-5 h-5 md:w-10 md:h-10 rounded-full">
-            <IoMdMail className="w-3 h-3 md:w-5 md:h-5" />
-          </span>
+          <Link href="https://www.linkedin.com/in/umaanidi/" target="_blank" className="bg-[#DDF5FC] flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full group">
+            <FaLinkedin className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+          </Link>
+          <Link href="mailto:umaanidi@gmail.com" target="_blank" className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-5 h-5 md:w-10 md:h-10 rounded-full group">
+            <IoMdMail className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+          </Link>
         </motion.div>
         <motion.div className="w-300 hidden md:block">
           <motion.video

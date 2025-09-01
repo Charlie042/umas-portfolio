@@ -8,6 +8,7 @@ import MenuBar from "./components/menu-bar";
 import { Drawer, DrawerContent, DrawerTitle, DrawerTrigger, DrawerClose } from "@/components/ui/drawer";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { motion } from "motion/react";
+import { handleResumeView } from "@/lib/utils";
 
 
 
@@ -66,12 +67,12 @@ const NavigationBar = () => {
         </ul>
       </div>
       <div className=" items-center gap-5 hidden lg:flex">
-        <Link
-          href="/resume"
+        <p
+        onClick={() => handleResumeView("/updated resume.pdf")}
           className="text-medium font-medium text-[#1E1E1E] hover:text-[#FF6B6B] cursor-pointer transition-all duration-300"
         >
           Resume
-        </Link>
+        </p>
         <Link
           href="https://www.linkedin.com/in/uma-anidi-"
           target="_blank"
