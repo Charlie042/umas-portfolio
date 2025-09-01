@@ -30,7 +30,7 @@ export const data = [
     job: "Frontend Developer",
     description:
       "She’s fun to work with, always open to feedback, and quick to iterate when something feels off.",
-    image: "/Precious.jpg",
+    image: "/PHOTO-2025-08-24-18-03-07.jpg",
     bgColor: "bg-[#F5FCFF]",
     borderColor: "border-[#48AACA]",
   },
