@@ -5,6 +5,7 @@ import { IoMdMail } from "react-icons/io";
 import { IoIosArrowRoundUp } from "react-icons/io";
 import { HiArrowUpRight } from "react-icons/hi2";
 import Link from "next/link";
+import { handleResumeView } from "@/lib/utils";
 
 
 
@@ -24,7 +25,13 @@ const Footer = () => {
             Got a question or just want to say hi? I will be so happy to hear
             from you! 😊
           </h2>
-          <Image src="/umaanidi.png" alt="cartoon" width={100} height={100} className="max-sm:w-20 "/>
+          <Image
+            src="/umaanidi.png"
+            alt="cartoon"
+            width={100}
+            height={100}
+            className="max-sm:w-20 "
+          />
         </div>
         <div className="lg:w-1/2 w-full flex flex-col md:items-end items-start my-5 px-10 lg:px-0 ">
           <h4 className="xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl font-bricolage font-medium">
@@ -32,10 +39,18 @@ const Footer = () => {
           </h4>
           <div className="flex items-center gap-4">
             <p className="text-[#8B8B8B] text-lg font-medium">Say Hello!</p>
-            <Link href="https://www.linkedin.com/in/umaanidi/" target="_blank" className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full group">
+            <Link
+              href="https://www.linkedin.com/in/umaanidi/"
+              target="_blank"
+              className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full group"
+            >
               <FaLinkedin className="w-5 h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
             </Link>
-            <Link href="mailto:umaanidi@gmail.com" target="_blank" className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-10 h-10 rounded-full group">
+            <Link
+              href="mailto:umaanidi@gmail.com"
+              target="_blank"
+              className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-10 h-10 rounded-full group"
+            >
               <IoMdMail className="w-5 h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
             </Link>
           </div>
@@ -64,20 +79,28 @@ const Footer = () => {
         <div className="flex items-center gap-2 text-[#828282] text-lg my-10">
           <p className="flex items-center gap-2 font-medium group">
             <span>
-              <Link href="https://www.linkedin.com/in/umaanidi/" className="hover:text-[#56CCF2] transition-all duration-500">Behance</Link>
+              <Link
+                href="https://www.behance.net/umaanidi_"
+                className="hover:text-[#56CCF2] transition-all duration-500"
+              >
+                Behance
+              </Link>
             </span>
             <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
           <p className="flex items-center gap-2 font-medium group">
             <span>
-              <Link href="https://www.linkedin.com/in/umaanidi/" className="hover:text-[#56CCF2] transition-all duration-500">Dribbble</Link>
+              <Link
+                href="https://dribbble.com/umaanidi"
+                className="hover:text-[#56CCF2] transition-all duration-500"
+              >
+                Dribbble
+              </Link>
             </span>
             <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
-          <p className="flex items-center gap-2 font-medium group">
-            <span>
-              <Link href="/resume" className="hover:text-[#56CCF2] transition-all duration-500">Resume</Link>
-            </span>
+          <p onClick={() => handleResumeView("/updated resume.pdf")} className="flex items-center gap-2 font-medium group cursor-pointer hover:text-[#56CCF2] transition-all duration-500">
+                Resume
             <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
         </div>
