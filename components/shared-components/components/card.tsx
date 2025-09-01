@@ -25,6 +25,7 @@ const Card = ({description, name, job, image, bgColor, borderColor}: CardProps) 
           alt={name}
           width={100}
           height={100}
+          priority
           className="w-15 h-15  rounded-full"
         />
         <div>
