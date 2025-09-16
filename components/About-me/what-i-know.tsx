@@ -41,13 +41,13 @@ const WhatIKnow = () => {
   }, [emblaApi]);
 
   return (
-    <section className="my-10">
+    <section className="my-10 md:mt-20 lg:mt-50">
       <h2 className="font-bricolage text-[#1E1E1E] text-3xl font-bold text-center">
         What I know how to do best
       </h2>
 
       <div
-        className="embla mt-10 max-w-400 mx-auto relative"
+        className="embla mt-10  max-w-400 mx-auto relative"
         ref={containerRef}
       >
         <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-white  z-10 hidden md:block" />

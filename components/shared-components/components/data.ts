@@ -267,7 +267,6 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeName: "Bias Free",
     shapeImage: biasFreeIcon,
     cursorColor: "bg-[#56CCF2]",
-    link: "",
     comingSoon: true,
   },
   {
@@ -296,7 +295,6 @@ export const featuredWorksData: featuredCardProps[] = [
     shapeName: "Neowork",
     shapeImage: neoworkIcon,
     cursorColor: "bg-[#D6C8FF]",
-    link: "",
     comingSoon: true,
   },
 ];;

@@ -26,6 +26,7 @@
   --color-card-purple: var(--card-purple);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  
  
   @keyframes marquee {
     from {

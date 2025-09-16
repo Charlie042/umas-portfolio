@@ -11,6 +11,8 @@ import SShape from "../ui/sshape";
 import { useMediaQuery } from "usehooks-ts";
 import { Pointer } from "../magicui/pointer";
 import { ImArrowUpRight2 } from "react-icons/im";
+import { TiCancel } from "react-icons/ti";
+
 
 
 
@@ -37,7 +39,7 @@ export interface featuredCardProps {
   shapeColor2: string;
   shapeName: string;
   shapeImage: string | StaticImageData;
-  link: string;
+  link?: string;
   cursorColor: string;
   comingSoon?: boolean;
 }
@@ -73,9 +75,16 @@ const FeaturedCard = ({
     target: ref,
     offset: ["start end", "start start"],
   });
+
   const ImageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, target]);
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const handleClick = () => {
+    if (link) {
+      window.open(link, "_blank");
+    }
+  };
   return (
     <div
       ref={ref}
@@ -85,13 +94,17 @@ const FeaturedCard = ({
     >
       <Pointer>
         <div
-          className={`flex items-center justify-center rounded-full p-2 ${cursorColor}`}
+          className={`flex items-center justify-center rounded-full p-2 ${!link ? "" : cursorColor}`}
         >
-          <ImArrowUpRight2 className={`text-sm`} />
+          {link ? (
+            <ImArrowUpRight2 className={`text-sm`} />
+          ) : (
+            <TiCancel className={`text-3xl text-white`} />
+          )}
         </div>
       </Pointer>
       <motion.div
-        onClick={() => window.open(link, "_blank")}
+        onClick={handleClick}
         className={cn(
           "group my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative",
           bgColor,
