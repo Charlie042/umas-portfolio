@@ -20,7 +20,7 @@ const FeaturedWorks = () => {
 
     const viewportHeight = window.innerHeight;
 
-    if (viewportHeight <= 670) {
+    if (viewportHeight <= 760) {
       setMarginClass("mb-[120vh]"); 
     } else if (viewportHeight <= 763) {
       setMarginClass("mb-[80vh]"); 
