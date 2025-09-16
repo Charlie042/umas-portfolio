@@ -36,7 +36,7 @@ useEffect(() => {
           Here are some of my best works so far.
         </motion.p>
       </div>
-      <div id="featured-works" ref={ref} className=" mt-20 mb-[50vh]">
+      <div id="featured-works" ref={ref} className=" mt-20 mb-[60vh]">
         {featuredWorksData.map((item, idx) => {
           // const target = 1 - (featuredWorksData.length - idx) * 0.05;
           return (
