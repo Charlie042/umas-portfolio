@@ -198,7 +198,7 @@ const FeaturedCard = ({
             <p className="text-sm lg:text-base font-medium">{percentForty}</p>
           </div>
         </div>
-        <motion.div className="max-w-[800px] lg:max-w-[1089px] min-h-[200px] lg:min-h-[300px] rounded-lg mx-auto my-10 w-full relative isolate overflow-hidden">
+        <motion.div className="max-w-[800px] lg:max-w-[1089px] min-h-[200px] lg:min-h-[400px] rounded-lg mx-auto my-10 w-full relative isolate overflow-hidden">
           <motion.div
             style={{ scale: ImageScale }}
             className="absolute top-0 left-0 w-full h-full "
