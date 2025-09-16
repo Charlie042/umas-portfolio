@@ -8,7 +8,7 @@ import thinking from "@/public/thinkIt.png";
 import laptopImg from "@/public/laptopImg.png";
 import savour from "@/public/savour.png";
 import survey from "@/public/survey.svg";
-import phoneSurvey from "@/public/phoneSurvey.svg";
+import phoneSurvey from "@/public/phoneSurvey.png";
 import surveyLarge from "@/public/surveyLarg.svg";
 import pad from "@/public/pad.svg";
 import vibers from "@/public/vibes.svg";
