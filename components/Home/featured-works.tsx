@@ -22,7 +22,7 @@ const FeaturedWorks = () => {
 
     if (viewportHeight <= 760) {
       setMarginClass("mb-[120vh]"); 
-    } else if (viewportHeight <= 763) {
+    } else if (viewportHeight <= 1023) {
       setMarginClass("mb-[80vh]"); 
     } else if (viewportHeight <= 1024) {
       setMarginClass("mb-[60vh]");
