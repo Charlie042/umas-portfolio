@@ -1,6 +1,9 @@
 import { featuredCardProps } from "@/components/Home/featured-card";
 import { MotionValue } from "motion/react";
 import { sereneIcon, vimedraIcon, buddyIcon, biasFreeIcon, neoworkIcon, branditIcon } from "@/public";
+import BiasFree from "@/public/Bias-free.png";
+import Neowork from "@/public/Neowork.png";
+import Brandit from "@/public/Brandit.png";
 
 export const data = [
   {
@@ -222,7 +225,7 @@ export const featuredWorksData: featuredCardProps[] = [
       "Designed an AI-powered tool that automates logo, color, and font selection—letting designers focus on creativity and small business owners get affordable, consistent branding.",
     percentForty: "Projected reduction in design setup time",
     percentSixty: "Cost savings for small businesses",
-    cardImage: "/Brandit.png",
+    cardImage: Brandit,
     textColor: "text-[#444444]",
     titleColor: "text-[#000000]",
     percent1: "50%",
@@ -250,7 +253,7 @@ export const featuredWorksData: featuredCardProps[] = [
       "A responsive platform hiding candidate identities until interview to eliminate bias, conceptualized and prototyped end-to-end.",
     percentForty: "Increased qualified candidate matches",
     percentSixty: "Reduced hiring bias",
-    cardImage: "/Bias-free.png",
+    cardImage: BiasFree,
     textColor: "text-[#444444]",
     titleColor: "text-[#000000]",
     percent1: "25%",
@@ -279,7 +282,7 @@ export const featuredWorksData: featuredCardProps[] = [
       "I built an on-demand job platform that connects employers and taskers in real time—ensuring efficient matches and secure, escrow-based payments as the Product Designer.",
     percentForty: "Projected user satisfaction",
     percentSixty: "Projected match accuracy",
-    cardImage: "/Neowork.png",
+    cardImage: Neowork,
     textColor: "text-[#7A3838]",
     titleColor: "text-[#130909]",
     percent1: "70%",
@@ -296,4 +299,4 @@ export const featuredWorksData: featuredCardProps[] = [
     link: "",
     comingSoon: true,
   },
-];
+];;

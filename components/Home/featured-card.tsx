@@ -157,15 +157,19 @@ const FeaturedCard = ({
               )}
             >
               {cardTitle}
+              {!comingSoon && (
               <span className="text-sm md:hidden self-start">
                 <IoMdArrowForward className="text-lg" />
               </span>
+              )}
             </h1>
             <p className=" text-xs md:text-sm lg:text-base font-medium ">
               {description}
             </p>
           </div>
+          {!comingSoon && (
           <IoMdArrowForward className="text-5xl hidden md:block group-hover:translate-x-2 transition-all duration-300" />
+          )}
         </div>
         <div className="flex justify-between gap-10 max-w-[725px] w-full ">
           <div className="flex flex-col lg:gap-3">
