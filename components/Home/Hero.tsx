@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { FaArrowDown } from "react-icons/fa6";
+import { IoArrowDownSharp } from "react-icons/io5";
 import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -55,7 +55,7 @@ const Hero = () => {
             Hey, I’m Uma
           </motion.span>
           <motion.span
-            initial={{ opacity: 0, }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="inline-block align-middle ml-1"
@@ -71,21 +71,21 @@ const Hero = () => {
           <motion.span
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease:"easeInOut"}}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             I design things
           </motion.span>{" "}
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2, ease:"easeInOut"}}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
           >
             that feel like a friendly chat
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5, ease:"easeInOut"}}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
             className="inline-block h-full ml-1 lg:absolute lg:top-39"
           >
             <Image
@@ -108,22 +108,45 @@ const Hero = () => {
         Three <span className="font-bricolage font-medium ">(3+)</span> years of
         designing apps, websites, and moments that just click.
       </motion.p>
-      <div className="flex  justify-between relative">
+      <div className="flex  justify-between relative ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="flex  gap-4  w-full"
+          className="flex flex-col justify-between gap-4 w-full"
         >
-          <p className="text-[#8B8B8B] font-medium text-sm md:text-lg">
-            Say Hello!
-          </p>
-          <Link href="https://www.linkedin.com/in/umaanidi/" target="_blank" className="bg-[#DDF5FC] flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full group">
-            <FaLinkedin className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
-          </Link>
-          <Link href="mailto:umaanidi@gmail.com" target="_blank" className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-5 h-5 md:w-10 md:h-10 rounded-full group">
-            <IoMdMail className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
-          </Link>
+          <div className="flex gap-2">
+            <p className="text-[#8B8B8B] font-medium text-sm md:text-lg">
+              Say Hello!
+            </p>
+            <Link
+              href="https://www.linkedin.com/in/uma-anidi-"
+              target="_blank"
+              className="bg-[#DDF5FC] flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full group"
+            >
+              <FaLinkedin className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+            </Link>
+            <Link
+              href="mailto:umaanidi@gmail.com"
+              target="_blank"
+              className="flex items-center justify-center gap-4 bg-[#DDF5FC] w-5 h-5 md:w-10 md:h-10 rounded-full group"
+            >
+              <IoMdMail className="w-3 h-3 md:w-5 md:h-5 group-hover:text-[#56CCF2] cursor-pointer transition-all duration-500" />
+            </Link>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className="flex justify-center mt-20 md:mt-0 self-end"
+          >
+            <button
+              onClick={scrollToFeatured}
+              className="animate-bounce bg-white p-2 w-14 h-14 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer"
+            >
+              <IoArrowDownSharp className="w-7 h-7 text-[#1E1E1E]" />
+            </button>
+          </motion.div>
         </motion.div>
         <motion.div className="w-300 hidden md:block">
           <motion.video
@@ -140,19 +163,6 @@ const Hero = () => {
           />
         </motion.div>
       </div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        className="flex justify-center mt-20 md:mt-0"
-      >
-        <button
-          onClick={scrollToFeatured}
-          className="animate-bounce bg-white p-2 w-10 h-10 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer"
-        >
-          <FaArrowDown className="w-6 h-6 text-[#1E1E1E]" />
-        </button>
-      </motion.div>
     </div>
   );
 };

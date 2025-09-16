@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <p className="text-[#8B8B8B] text-lg font-medium">Say Hello!</p>
             <Link
-              href="https://www.linkedin.com/in/umaanidi/"
+              href="https://www.linkedin.com/in/uma-anidi-"
               target="_blank"
               className="bg-[#DDF5FC] flex items-center justify-center w-10 h-10 rounded-full group"
             >
@@ -99,8 +99,11 @@ const Footer = () => {
             </span>
             <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
-          <p onClick={() => handleResumeView("/updated resume.pdf")} className="flex items-center gap-2 font-medium group cursor-pointer hover:text-[#56CCF2] transition-all duration-500">
-                Resume
+          <p
+            onClick={() => handleResumeView("/updated resume.pdf")}
+            className="flex items-center gap-2 font-medium group cursor-pointer hover:text-[#56CCF2] transition-all duration-500"
+          >
+            Resume
             <HiArrowUpRight className="w-5 h-5 group-hover:text-[#56CCF2] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
           </p>
         </div>

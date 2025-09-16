@@ -39,6 +39,7 @@ export interface featuredCardProps {
   shapeImage: string | StaticImageData;
   link: string;
   cursorColor: string;
+  comingSoon?: boolean;
 }
 const FeaturedCard = ({
   id,
@@ -65,6 +66,7 @@ const FeaturedCard = ({
   shapeImage,
   link,
   cursorColor,
+  comingSoon,
 }: featuredCardProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -82,7 +84,9 @@ const FeaturedCard = ({
       )}
     >
       <Pointer>
-        <div className={`flex items-center justify-center rounded-full p-2 ${cursorColor}`}>
+        <div
+          className={`flex items-center justify-center rounded-full p-2 ${cursorColor}`}
+        >
           <ImArrowUpRight2 className={`text-sm`} />
         </div>
       </Pointer>
@@ -128,6 +132,13 @@ const FeaturedCard = ({
           >
             {badgeYear}
           </Badge>
+          {comingSoon && (
+            <div className="relative w-50 ml-20">
+              <div className="absolute -top-8 flex justify-center items-center bg-[#B0F9A5] text-[#213E1C] text-xs xl:text-sm  font-semibold px-2 xl:px-5 py-1 rounded-full">
+                Coming Soon
+              </div>
+            </div>
+          )}
           <Badge
             className={cn(
               "flex justify-center rounded-full text-xs xl:text-base px-2 xl:px-5 py-1",
