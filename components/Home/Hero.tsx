@@ -105,8 +105,8 @@ const Hero = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className=" text-md md:text-lg text-[#696969] font-medium"
       >
-        Three <span className="font-bricolage font-medium ">(3+)</span> years of
-        designing apps, websites, and moments that just click.
+        I
+        design apps, websites, and moments that just click.
       </motion.p>
       <div className="flex  justify-between relative ">
         <motion.div
