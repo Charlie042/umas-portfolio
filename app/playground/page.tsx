@@ -30,11 +30,11 @@ import { Playground1, Playground2, Playground3 } from "@/components/playground";
 
   return (
     <section  className=" my-20">
-      <motion.div className="flex flex-col gap-5">
-        <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeOut"}} className="font-bricolage text-[#1E1E1E] text-3xl font-bold">
+      <motion.div className="flex flex-col gap-2 lg:gap-5  px-5 lg:px-0">
+        <motion.h3 initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeOut"}} className="font-bricolage text-[#1E1E1E] text-2xl lg:text-3xl font-bold">
           My Playground
         </motion.h3>
-        <motion.p initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeOut"}} className="font-sotashi text-lg text-[#696969] font-normal">Just a bunch of things that i’ve worked on over time.</motion.p>
+        <motion.p initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5, ease: "easeOut"}} className="font-sotashi pr-5 lg:pl-0 text-base lg:text-lg text-[#696969] font-normal">Just a bunch of things that i’ve worked on over time.</motion.p>
       </motion.div>
       <div className="flex flex-col gap-30 mt-20">
         <motion.div ref={ref} style={{scale: scale}} initial={{opacity: 0, y: 15}} animate={{opacity: 1, y: -5}} transition={{duration: 0.5, ease: "easeOut", delay: 0.5}}>

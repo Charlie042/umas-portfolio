@@ -17,6 +17,7 @@
 
   --font-sans: var(--font-satoshi);
   --font-bricolage: var(--font-bricolage);
+  --font-unbounded: var(--font-unbounded);
 
   --color-card-yellow: var(--card-yellow);
   --color-card-black: var(--card-black);

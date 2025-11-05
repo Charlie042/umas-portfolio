@@ -297,4 +297,36 @@ export const featuredWorksData: featuredCardProps[] = [
     cursorColor: "bg-[#D6C8FF]",
     comingSoon: true,
   },
-];;
+];
+
+export const aboutMeText = [
+  {
+    id: 1,
+    text: ` I’ve always been that kid who jumps into everything, product design,
+        sewing, a little writing… even tried web dev once (lol, don’t ask 😭).
+        Most of it stayed at surface level until a friend recommended me for a
+        social media manager role at a design school. Suddenly, I was helping
+        promote a course in something I’d always had an interest in (product
+        design).`,
+  },
+  {
+    id: 2,
+    text: `Week after week, I heard student success stories, graduates landing jobs
+        within six months of learning product design, with solid salaries to
+        match.`,
+  },
+  {
+    id: 3,
+    text: `Since then, I’ve completed a nine-month internship (won Product Design
+        Student of the Year!), collaborated on team projects, and taken solo
+        ideas from sketch to prototype. Each one taught me more about empathy,
+        clarity, and keeping things simple.`,
+  },
+  {
+    id: 4,
+    text: `When I’m not wireframing or polishing micro-interactions, I’m nose-deep
+        in a novel or binge-watching a series to reboot my brain. And I’ll never
+        say no to a good chat, hearing people’s stories is my secret to
+        designing with heart.`,
+  },
+];

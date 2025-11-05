@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque, Unbounded } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import {
@@ -48,6 +48,10 @@ const satoshi = localFont({
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
+}); 
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -63,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${bricolage.variable} font-sans antialiased `}
+        className={`${satoshi.variable} ${bricolage.variable} ${unbounded.variable} font-sans antialiased `}
       >
         <div className="max-w-[1200px] mx-auto">
           <NavigationBar />
