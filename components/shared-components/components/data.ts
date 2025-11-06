@@ -1,9 +1,17 @@
 import { featuredCardProps } from "@/components/Home/featured-card";
 import { MotionValue } from "motion/react";
-import { sereneIcon, vimedraIcon, buddyIcon, biasFreeIcon, neoworkIcon, branditIcon } from "@/public";
+import {
+  sereneIcon,
+  vimedraIcon,
+  buddyIcon,
+  biasFreeIcon,
+  neoworkIcon,
+  branditIcon,
+} from "@/public";
 import BiasFree from "@/public/Bias-free.png";
 import Neowork from "@/public/Neowork.png";
 import Brandit from "@/public/Brandit.png";
+import { text } from "stream/consumers";
 
 export const data = [
   {
@@ -48,7 +56,6 @@ export const data = [
     borderColor: "border-[#C0A522]",
   },
 ];
-
 
 export const badgeData = [
   {
@@ -127,7 +134,6 @@ export const badgeData = [
     icon: "/writing.svg",
   },
 ];
-
 
 export const featuredWorksData: featuredCardProps[] = [
   {
@@ -317,13 +323,21 @@ export const aboutMeText = [
   },
   {
     id: 3,
+    text: `That got me thinking: “Why not me?” 
+    I quit, dove headfirst into product design, and this time, 
+    because I already had some basic knowledge, 
+    I was less focused on just making things look nice, 
+    I cared more about solving real problems in the simplest way possible.`,
+  },
+  {
+    id: 4,
     text: `Since then, I’ve completed a nine-month internship (won Product Design
         Student of the Year!), collaborated on team projects, and taken solo
         ideas from sketch to prototype. Each one taught me more about empathy,
         clarity, and keeping things simple.`,
   },
   {
-    id: 4,
+    id: 5,
     text: `When I’m not wireframing or polishing micro-interactions, I’m nose-deep
         in a novel or binge-watching a series to reboot my brain. And I’ll never
         say no to a good chat, hearing people’s stories is my secret to
