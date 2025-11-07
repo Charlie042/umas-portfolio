@@ -1,10 +1,7 @@
-import Hero from "@/components/Home/Hero";
-import FeaturedWorks from "@/components/Home/featured-works";
-export default function Home() {
+import MainPageComp from "@/components/main-page";
+
+export default function MainPage(){
   return (
-    <section>
-    <Hero/>
-    <FeaturedWorks/>
-    </section>
-  );
+    <MainPageComp/>
+  )
 }

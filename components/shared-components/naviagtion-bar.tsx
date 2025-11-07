@@ -9,15 +9,15 @@ import { HiArrowUpRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { motion, AnimatePresence, easeInOut } from "motion/react";
 import { handleResumeView } from "@/lib/utils";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const NavigationBar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { label: "Works", href: "/" },
-    { label: "About me", href: "/about-me" },
-    { label: "Playground", href: "/playground" },
+    { label: "Works", href: "/me" },
+    { label: "About me", href: "/me/about-me" },
+    { label: "Playground", href: "/me/playground" },
   ];
 
   const [activeTab, setActiveTab] = useState(pathname || "/");

@@ -69,16 +69,9 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${bricolage.variable} ${unbounded.variable} font-sans antialiased `}
       >
-        <div className="max-w-[1200px] mx-auto">
-          <NavigationBar />
+        <div className="">
           <main>{children}</main>
         </div>
-
-        <footer className="h-screen isolate">
-          <ConditionalWhatIKnow />
-          <WhatPeopleSay />
-          <Footer />
-        </footer>
       </body>
     </html>
   );
