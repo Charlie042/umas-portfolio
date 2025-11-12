@@ -11,6 +11,7 @@ import SShape from "../ui/sshape";
 import { useMediaQuery } from "usehooks-ts";
 import { Pointer } from "../magicui/pointer";
 import { ImArrowUpRight2 } from "react-icons/im";
+import { urlFor } from "@/sanity/lib/image";
 import { TiCancel } from "react-icons/ti";
 
 
@@ -123,7 +124,10 @@ const FeaturedCard = ({
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
               <div className="absolute isolate  z-50">
                 <Image
-                  src={shapeImage}
+                  src={urlFor(shapeImage)
+        .width(800)
+        .height(600)
+        .url()}
                   alt="shape"
                   width={50}
                   height={50}
@@ -204,7 +208,7 @@ const FeaturedCard = ({
             className="absolute top-0 left-0 w-full h-full "
           >
             <Image
-              src={cardImage}
+              src={urlFor(cardImage).width(1000).url()}
               alt="Featured work"
               width={500}
               height={500}

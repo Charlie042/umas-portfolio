@@ -1,8 +1,13 @@
 import { NavigationBar, ConditionalWhatIKnow, WhatPeopleSay,Footer } from "@/components/shared-components";
+import { TESTIMONIALS } from "@/sanity/lib/query";
+import { client } from "@/sanity/lib/client";
 
-export default function MainLayout({children}: Readonly<{
+export default async function MainLayout({children}: Readonly<{
   children: React.ReactNode;
 }>){
+
+  const testimonials = await client.fetch(TESTIMONIALS);
+
     return (
         <div>
          <div className="max-w-[1200px] mx-auto">
@@ -12,7 +17,7 @@ export default function MainLayout({children}: Readonly<{
 
         <footer className="h-screen isolate">
           <ConditionalWhatIKnow />
-          <WhatPeopleSay />
+          <WhatPeopleSay data={testimonials}/>
           <Footer />
         </footer>
         </div>

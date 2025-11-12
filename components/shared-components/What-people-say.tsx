@@ -1,12 +1,23 @@
 "use client"
 import Card from "./components/card";
-import { data } from "./components/data";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { Marquee } from "../ui/marquee";
 
-const WhatPeopleSay = () => {
+type dataCard = {
+  _id: number;
+  name: string;
+  job: string;
+  title: string;
+  description: string;
+  borderColor: string;
+  bgColor: string;
+  image: string;
+};
+
+interface WhatPeopleSayProps {
+  data: dataCard[];
+}
+const WhatPeopleSay = ({data}: WhatPeopleSayProps) => {
+
   return (
     <section className="mx-0  mt-10 md:mt-20 lg:mt-50 bg-white">
       <h2 className="font-bricolage text-[#1E1E1E] text-3xl font-bold text-center">
@@ -19,8 +30,8 @@ const WhatPeopleSay = () => {
         <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-white via-[rgba(255, 255, 255, 0)] to-[rgba(255, 255, 255, 1)] z-10  " />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-[rgba(255, 255, 255, 0)]  to-[rgba(255, 255, 255, 1)] z-10 " />
         <Marquee pauseOnHover className="[--duration:25s] gap-7">
-          {data.map((item) => (
-            <Card key={item.id} {...item} />
+          {data?.map((item) => (
+            <Card key={item._id} {...item} />
           ))}
         </Marquee>
       </div>

@@ -1,13 +1,22 @@
 "use client";
 import FeaturedCard from "./featured-card";
-import { featuredWorksData } from "../shared-components/components/data";
+import { featuredCardProps } from "./featured-card";
+
 import { motion, useScroll } from "motion/react";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { client } from "@/sanity/lib/client";
+import { FEATURE_CARD } from "@/sanity/lib/query";
 import Lenis from "lenis";
 
-const FeaturedWorks = () => {
+interface featuredCard{
+  featuredCard: featuredCardProps[];
+}
+
+const FeaturedWorks = ({featuredCard}:featuredCard) => {
   const ref = useRef(null);
   const [marginClass, setMarginClass] = useState("mb-[60vh]"); // Default fallback
+  const [cardData, setSetData] = useState(null)
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -79,7 +88,7 @@ const FeaturedWorks = () => {
         </motion.p>
       </div>
       <div id="featured-works" ref={ref} className={`mt-20 ${marginClass}`}>
-        {featuredWorksData.map((item, idx) => {
+        {featuredCard.sort((a,b)=> a.id - b.id ).map((item, idx) => {
           // const target = 1 - (featuredWorksData.length - idx) * 0.05;
           return (
             <FeaturedCard
