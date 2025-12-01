@@ -3,7 +3,7 @@ import { defineType, defineField } from "sanity";
 export const skillBadgeTypes = defineType({
   name: "skillBadge",
   title: "Skill Badge",
-  type: "document", // Or 'object' if you intend to embed these in another document without separate management
+  type: "document",
   fields: [
     defineField({
       name: "id",
@@ -21,7 +21,7 @@ export const skillBadgeTypes = defineType({
     defineField({
       name: "icon",
       title: "Icon",
-      type: "image", // Assuming the icon is an image, like an SVG or PNG
+      type: "image",
       description: "Icon associated with the skill.",
       options: {
         hotspot: true,

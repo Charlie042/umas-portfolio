@@ -27,7 +27,7 @@ export const testimonialTypes = defineType({
     defineField({
       name: "description",
       title: "Testimonial Text",
-      type: "text", // Using 'text' for longer, plain-text descriptions
+      type: "text",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
