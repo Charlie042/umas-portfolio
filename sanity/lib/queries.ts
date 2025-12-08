@@ -42,6 +42,8 @@ export const playgroundContent = defineQuery(`*[_type == "playgroundSection"]{
     name,
     images[]{
       altText,
-      image,
+      image{
+      asset
+      },
 }
    }`);
