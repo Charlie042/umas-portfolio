@@ -3,6 +3,7 @@ import { featuredCardType } from "./featuredCardTypes";
 import { skillBadgeTypes } from "./skillBadgeTypes";
 import { testimonialTypes } from "./testimonialTypes";
 import { aboutMeTypes, aboutMeContentType } from "./aboutMeTypes";
+import { playgroundImage, playgroundSection } from "./playgroundImageTypes";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -11,5 +12,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutMeContentType,
     skillBadgeTypes,
     testimonialTypes,
+    playgroundImage,
+    playgroundSection,
   ],
 };

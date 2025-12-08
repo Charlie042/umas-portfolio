@@ -17,9 +17,17 @@ import {
   xport,
   phones2,
 } from "@/public";
-import { useRef } from "react";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { urlFor } from "@/sanity/lib/image";
 
-const Playground1 = () => {
+type Playground = {
+  Images: PlaygroundProps[];
+};
+const Playground1 = ({ Images }: Playground) => {
+  // const img = Images.map((image) => image.images[0]).map((item) => item.image);
+
+  // console.log(img);
+
   return (
     <div className="max-w-screen-xl lg:mx-3 flex flex-col md:flex-row gap-3 mx-5">
       <div className="flex flex-col">
@@ -28,6 +36,14 @@ const Playground1 = () => {
           <div className="max-w-[490px] w-full aspect-[49/33] rounded-lg overflow-hidden border">
             <Image
               src={thinking}
+              // src={
+              //   img.length > 0
+              //     ? urlFor(img as SanityImageSource)
+              //         .width(800)
+              //         .height(600)
+              //         .url()
+              //     : thinking
+              // }
               alt="playground"
               width={1000}
               height={1000}
@@ -75,7 +91,7 @@ const Playground1 = () => {
 
 export default Playground1;
 
-const Playground2 = () => {
+const Playground2 = ({ Images }: Playground) => {
   return (
     <div className="max-w-screen-xl lg:mx-3 flex flex-col gap-3 mx-5">
       {/* First row */}
@@ -149,7 +165,7 @@ const Playground2 = () => {
   );
 };
 
-const Playground3 = () => {
+const Playground3 = ({ Images }: Playground) => {
   return (
     <div className="max-w-screen-xl lg:mx-3 flex flex-col gap-5 mx-5">
       {/* First row */}

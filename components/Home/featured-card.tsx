@@ -12,9 +12,9 @@ import { useMediaQuery } from "usehooks-ts";
 import { Pointer } from "../magicui/pointer";
 import { ImArrowUpRight2 } from "react-icons/im";
 import { TiCancel } from "react-icons/ti";
-
-
-
+import { urlFor } from "@/sanity/lib/image";
+import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export interface featuredCardProps {
   id: number;
@@ -24,7 +24,7 @@ export interface featuredCardProps {
   badgeTitle: string;
   cardTitle: string;
   description: string;
-  cardImage: string | StaticImageData;
+  cardImage: ImageUrlBuilder | StaticImageData | SanityImageSource;
   percentSixty: string;
   percentForty: string;
   textColor?: string;
@@ -38,7 +38,7 @@ export interface featuredCardProps {
   shapeColor: string;
   shapeColor2: string;
   shapeName: string;
-  shapeImage: string | StaticImageData;
+  shapeImage: ImageUrlBuilder | StaticImageData | SanityImageSource;
   link?: string;
   cursorColor: string;
   comingSoon?: boolean;
@@ -75,7 +75,6 @@ const FeaturedCard = ({
     target: ref,
     offset: ["start end", "start start"],
   });
-
   const ImageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, target]);
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -85,11 +84,13 @@ const FeaturedCard = ({
       window.open(link, "_blank");
     }
   };
+
+  console.log(cardImage);
   return (
     <div
       ref={ref}
       className={cn(
-        " max-w-[102vw] h-[70vh] mx-auto sticky top-10 cursor-pointer"
+        " max-w-[102vw] h-[70vh] mx-auto sticky top-10 cursor-pointer",
       )}
     >
       <Pointer>
@@ -108,7 +109,7 @@ const FeaturedCard = ({
         className={cn(
           "group my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative",
           bgColor,
-          textColor
+          textColor,
         )}
         style={{
           top: isMobile
@@ -123,7 +124,10 @@ const FeaturedCard = ({
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
               <div className="absolute isolate  z-50">
                 <Image
-                  src={shapeImage}
+                  src={urlFor(shapeImage as SanityImageSource)
+                    .width(800)
+                    .height(600)
+                    .url()}
                   alt="shape"
                   width={50}
                   height={50}
@@ -140,7 +144,7 @@ const FeaturedCard = ({
           <Badge
             className={cn(
               "flex justify-center rounded-full text-xs xl:text-base  px-2 xl:px-5 py-1",
-              badgeColor
+              badgeColor,
             )}
           >
             {badgeYear}
@@ -155,7 +159,7 @@ const FeaturedCard = ({
           <Badge
             className={cn(
               "flex justify-center rounded-full text-xs xl:text-base px-2 xl:px-5 py-1",
-              badgeColor
+              badgeColor,
             )}
           >
             {badgeTitle}
@@ -166,14 +170,14 @@ const FeaturedCard = ({
             <h1
               className={cn(
                 titleColor,
-                "text-md leading-tight md:text-2xl xl:text-3xl font-semibold font-bricolage flex items-center justify-between"
+                "text-md leading-tight md:text-2xl xl:text-3xl font-semibold font-bricolage flex items-center justify-between",
               )}
             >
               {cardTitle}
               {!comingSoon && (
-              <span className="text-sm md:hidden self-start">
-                <IoMdArrowForward className="text-lg" />
-              </span>
+                <span className="text-sm md:hidden self-start">
+                  <IoMdArrowForward className="text-lg" />
+                </span>
               )}
             </h1>
             <p className=" text-xs md:text-sm lg:text-base font-medium ">
@@ -181,7 +185,7 @@ const FeaturedCard = ({
             </p>
           </div>
           {!comingSoon && (
-          <IoMdArrowForward className="text-5xl hidden md:block group-hover:translate-x-2 transition-all duration-300" />
+            <IoMdArrowForward className="text-5xl hidden md:block group-hover:translate-x-2 transition-all duration-300" />
           )}
         </div>
         <div className="flex justify-between gap-10 max-w-[725px] w-full ">
@@ -204,7 +208,9 @@ const FeaturedCard = ({
             className="absolute top-0 left-0 w-full h-full "
           >
             <Image
-              src={cardImage}
+              src={urlFor(cardImage as SanityImageSource)
+                .width(1200)
+                .url()}
               alt="Featured work"
               width={500}
               height={500}

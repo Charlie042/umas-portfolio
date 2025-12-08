@@ -3,17 +3,21 @@ import FeaturedCard from "./featured-card";
 import { featuredWorksData } from "../shared-components/components/data";
 import { motion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { featuredCardProps } from "./featured-card";
 import Lenis from "lenis";
 
-const FeaturedWorks = () => {
+const FeaturedWorks = ({
+  featuredWork,
+}: {
+  featuredWork: featuredCardProps[];
+}) => {
   const ref = useRef(null);
-  const [marginClass, setMarginClass] = useState("mb-[60vh]"); // Default fallback
+  const [marginClass, setMarginClass] = useState("mb-[60vh]");
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
-
 
   const calculateMargin = () => {
     if (typeof window === "undefined") return; // SSR safety
@@ -21,9 +25,9 @@ const FeaturedWorks = () => {
     const viewportHeight = window.innerHeight;
 
     if (viewportHeight <= 760) {
-      setMarginClass("mb-[120vh]"); 
+      setMarginClass("mb-[120vh]");
     } else if (viewportHeight <= 1023) {
-      setMarginClass("mb-[80vh]"); 
+      setMarginClass("mb-[80vh]");
     } else if (viewportHeight <= 1024) {
       setMarginClass("mb-[60vh]");
     } else {
@@ -79,7 +83,7 @@ const FeaturedWorks = () => {
         </motion.p>
       </div>
       <div id="featured-works" ref={ref} className={`mt-20 ${marginClass}`}>
-        {featuredWorksData.map((item, idx) => {
+        {featuredWork?.map((item, idx) => {
           // const target = 1 - (featuredWorksData.length - idx) * 0.05;
           return (
             <FeaturedCard
