@@ -344,7 +344,7 @@ export const featuredCardType = defineType({
     defineField({
       name: "link",
       title: "External Link",
-      type: "url",
+      type: "string",
       description: "Optional external link for the card.",
       options: {
         list: [
