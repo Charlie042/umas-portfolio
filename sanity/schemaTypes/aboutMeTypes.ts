@@ -41,7 +41,9 @@ export const aboutMeTypes = defineType({
     prepare({ title, subtitle }) {
       const plainText = subtitle
         ? subtitle
-            .map((block) => block.children.map((span) => span.text).join(""))
+            .map((block: any) =>
+              block.children.map((span: any) => span.text).join(""),
+            )
             .join("")
         : "No text";
       return {
