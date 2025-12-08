@@ -85,7 +85,6 @@ const FeaturedCard = ({
     }
   };
 
-  console.log(cardImage);
   return (
     <div
       ref={ref}
