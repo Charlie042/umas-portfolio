@@ -5,7 +5,16 @@ import { client } from "@/sanity/lib/client";
 import { aboutMeContent } from "@/sanity/lib/queries";
 
 const AboutMe = async () => {
-  const data = await client.fetch(aboutMeContent);
+  let data = [];
+
+  try {
+    data = await client.fetch(aboutMeContent);
+  } catch (error) {
+    console.warn("Failed to fetch about me content during build:", error);
+    // Fallback to empty array during build failures
+    data = [];
+  }
+
   return (
     <section className="">
       <About aboutMe={data[0]?.paragraphs} />
