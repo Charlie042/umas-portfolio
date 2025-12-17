@@ -47,3 +47,9 @@ export const playgroundContent = defineQuery(`*[_type == "playgroundSection"]{
       },
 }
    }`);
+
+export const skillBadge = defineQuery(`*[_type == "skillBadge"]{
+    name,
+    id,
+      icon
+   }`);

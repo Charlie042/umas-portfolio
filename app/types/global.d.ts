@@ -11,3 +11,14 @@ interface PlaygroundProps {
   name: string;
   _id: string;
 }
+
+interface SanitySkillImage {
+  alt: string;
+  asset: SanityAsset;
+  _type: string;
+}
+interface SkillBadgeProps {
+  icon: SanitySkillImage[];
+  name: string;
+  id: string;
+}
