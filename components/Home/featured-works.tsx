@@ -1,6 +1,5 @@
 "use client";
 import FeaturedCard from "./featured-card";
-import { featuredWorksData } from "../shared-components/components/data";
 import { motion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { featuredCardProps } from "./featured-card";
