@@ -1,11 +1,14 @@
 "use client";
 import Badge from "./components/badge";
-import { badgeData } from "../shared-components/components/data";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { useEffect, useRef } from "react";
 
-const WhatIKnow = () => {
+const WhatIKnow = ({
+  skillBadgeData,
+}: {
+  skillBadgeData: SkillBadgeProps[];
+}) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
@@ -16,7 +19,7 @@ const WhatIKnow = () => {
         stopOnMouseEnter: false,
         playOnInit: true,
       }),
-    ]
+    ],
   );
 
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -40,6 +43,14 @@ const WhatIKnow = () => {
     };
   }, [emblaApi]);
 
+  const repeatedBadgeData: SkillBadgeProps[] = Array(3)
+    .fill(skillBadgeData)
+    .flat()
+    .map((item, index) => ({
+      ...item,
+      id: `${item.id}-${index}`,
+    }));
+
   return (
     <section className="my-10 md:mt-20 lg:mt-50">
       <h2 className="font-bricolage text-[#1E1E1E] text-3xl font-bold text-center">
@@ -54,7 +65,7 @@ const WhatIKnow = () => {
         <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-white via-white  z-10 hidden md:block" />
         <div className="embla__viewport overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex gap-5">
-            {badgeData.map((item) => (
+            {repeatedBadgeData.map((item) => (
               <div key={item.id} className="embla__slide flex-[0_0_auto] px-4">
                 <Badge name={item.name} icon={item.icon} />
               </div>

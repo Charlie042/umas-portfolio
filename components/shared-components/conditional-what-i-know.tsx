@@ -3,11 +3,15 @@
 import { usePathname } from "next/navigation";
 import WhatIKnow from "@/components/About-me/what-i-know";
 
-const ConditionalWhatIKnow = () => {
+const ConditionalWhatIKnow = ({
+  skillBadgeData,
+}: {
+  skillBadgeData: SkillBadgeProps[];
+}) => {
   const pathname = usePathname();
-  const isAboutMe = pathname === "/about-me";
+  const isAboutMe = pathname === "/me/about-me";
 
-  return isAboutMe ? <WhatIKnow /> : null;
+  return isAboutMe ? <WhatIKnow skillBadgeData={skillBadgeData} /> : null;
 };
 
 export default ConditionalWhatIKnow;
