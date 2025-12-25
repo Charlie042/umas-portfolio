@@ -1,6 +1,6 @@
 "use server";
 import { client } from "@/sanity/lib/client";
-import { playgroundContent, skillBadge } from "@/sanity/lib/queries";
+import { aboutMeContent, getFeaturedCards, playgroundContent, skillBadge } from "@/sanity/lib/queries";
 
 export async function fetchData() {
   const data = await client.fetch(playgroundContent);
@@ -10,5 +10,15 @@ export async function fetchData() {
 export async function fetchSkillBadgeData() {
   const data = await client.fetch(skillBadge);
 
+  return data;
+}
+
+export async function fetchAboutMeData() {
+  const data = await client.fetch(aboutMeContent);
+  return data;
+}
+
+export async function fetchFeaturedWorkData() {
+  const data = await client.fetch(getFeaturedCards);
   return data;
 }
