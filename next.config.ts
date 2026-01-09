@@ -13,7 +13,10 @@ const nextConfig: NextConfig = {
 
   // Next.js 16 features
   experimental: {
-    // Enable other experimental features if needed
+    // Server Actions configuration
+    serverActions: {
+      bodySizeLimit: "20mb", // Increase limit for image uploads
+    },
   },
 
   // React Compiler support (moved to top level in Next.js 16)

@@ -41,3 +41,4 @@ export const data = [
     borderColor: "border-[#C0A522]",
   },
 ];
+

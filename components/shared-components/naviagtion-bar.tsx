@@ -147,13 +147,13 @@ const NavigationBar = () => {
                 <div className="mt-7">
                   <ul className="flex flex-col gap-5 py-10 px-5 text-base font-medium font-unbounded tracking-[-0.95px]">
                     <li>
-                      <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                      <Link href="/me" onClick={() => setIsMenuOpen(false)}>
                         WORKS
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/about-me"
+                        href="/me/about-me"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         ABOUT ME
@@ -161,7 +161,7 @@ const NavigationBar = () => {
                     </li>
                     <li>
                       <Link
-                        href="/playground"
+                        href="/me/playground"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         PLAYGROUND
