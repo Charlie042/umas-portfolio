@@ -4,9 +4,6 @@ import { Tabs, TabList, TabTrigger, TabContent } from "@/components/ui/tabs/tabs
 import { GalleryModal } from "../components/gallery"
 import { FeaturedWorkEdit } from "./featuredWork-edit";
 import { FeaturedWorkAdd } from "./featuredWorked-add";
-import { Suspense } from "react";
-import { fetchFeaturedWorkData } from "@/components/apiAction";
-import { use } from "react";
 import { featuredCardProps } from "@/components/Home/featured-card";
 
 

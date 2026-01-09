@@ -19,7 +19,7 @@ export default function AdminPageContent ({ featuredCards }: { featuredCards: Pr
                 <p>This content exists only in the modal view.</p>
                 {/* Add your gallery images or description here */}
             </GalleryModal>
-            <GalleryModal id="testimonials" bgColor="#f7e99e" title="Testimonials" titleColor="text-[#524a24]" >
+            <GalleryModal id="testimonials" bgColor="#f7e99e" title="About Me" titleColor="text-[#524a24]" >
                 <p>This content exists only in the modal view.</p>
                 {/* Add your gallery images or description here */}
             </GalleryModal>

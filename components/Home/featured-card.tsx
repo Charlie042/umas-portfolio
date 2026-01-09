@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { Badge } from "../ui/badge";
-import { cn } from "@/lib/utils";
+import { cn, ConvertBgToHex } from "@/lib/utils";
 import { IoMdArrowForward } from "react-icons/io";
 import { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform, MotionValue } from "motion/react";
@@ -85,6 +85,7 @@ const FeaturedCard = ({
     }
   };
 
+
   return (
     <div
       ref={ref}
@@ -115,6 +116,7 @@ const FeaturedCard = ({
             ? `calc(2% + ${idx * 50}px)`
             : `calc(2% + ${idx * 50}px)`,
           scale: scale,
+          backgroundColor: ConvertBgToHex(bgColor),
         }}
       >
         <div className="hidden md:flex justify-between item-center relative">
