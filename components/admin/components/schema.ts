@@ -6,16 +6,27 @@ const transformDescription = (val: string | unknown[]): string => {
     // Handle array of arrays (from query: description[].children[].text)
     if (val.length > 0 && Array.isArray(val[0])) {
       return val
-        .map((arr: unknown) => (Array.isArray(arr) ? arr.join("") : String(arr)))
+        .map((arr: unknown) =>
+          Array.isArray(arr) ? arr.join("") : String(arr)
+        )
         .join("\n");
     }
     // Handle array of block objects
     return val
       .map((block: unknown) => {
-        if (block && typeof block === "object" && block !== null && "children" in block) {
-          const blockWithChildren = block as { children?: Array<{ text?: string }> };
+        if (
+          block &&
+          typeof block === "object" &&
+          block !== null &&
+          "children" in block
+        ) {
+          const blockWithChildren = block as {
+            children?: Array<{ text?: string }>;
+          };
           if (Array.isArray(blockWithChildren.children)) {
-            return blockWithChildren.children.map((child: any) => child.text || "").join("");
+            return blockWithChildren.children
+              .map((child: any) => child.text || "")
+              .join("");
           }
         }
         return String(block || "");

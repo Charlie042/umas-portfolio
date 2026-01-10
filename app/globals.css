@@ -3,12 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --card-yellow: #FFF2B6;
-  --card-black: #1E1E1E;
-  --card-blue: #56CCF2;
-  --card-ash: #FFF9F3;
-  --card-red: #7A3838;
-  --card-purple: #DACEFF;
+  --card-yellow: #fff2b6;
+  --card-black: #1e1e1e;
+  --card-blue: #56ccf2;
+  --card-ash: #fff9f3;
+  --card-red: #7a3838;
+  --card-purple: #daceff;
 }
 
 @theme inline {
@@ -27,8 +27,7 @@
   --color-card-purple: var(--card-purple);
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  
- 
+
   @keyframes marquee {
     from {
       transform: translateX(0);
@@ -64,13 +63,13 @@
   clip-path: polygon(100% 0, 100% 100%, 25% 100%, 0 90%, 0 10%, 25% 0);
 }
 
-body{
-  transition-property: opacity, transform, filter, background;;
+body {
+  transition-property: opacity, transform, filter, background;
   transition-timing-function: ease-in-out;
   transition-duration: 200ms;
 }
 
-.page-transition{
+.page-transition {
   opacity: 0;
   transform: scale(0.98);
   filter: blur(2px);
@@ -79,11 +78,11 @@ body{
 .loader {
   display: block;
   --height-of-loader: 4px;
-  --loader-color: #56CCF2;
+  --loader-color: #56ccf2;
   width: 130px;
   height: var(--height-of-loader);
   border-radius: 30px;
-  background-color: #F2EAE2;
+  background-color: #f2eae2;
   position: relative;
 }
 
@@ -97,7 +96,6 @@ body{
   height: 100%;
   border-radius: 30px;
   animation: moving 1s ease-in-out infinite;
-  ;
 }
 
 @keyframes moving {
@@ -110,4 +108,14 @@ body{
     right: 0;
     left: unset;
   }
+}
+
+.scroll-none {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
