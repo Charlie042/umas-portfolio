@@ -289,7 +289,7 @@ const onSubmit = async (data: FormData) => {
     }
 
     return (
-        <div className="relative">
+        <div className="relative ">
           {/* Cards view - before opening */}
           {!hasOpened && (
             <div className="flex flex-wrap gap-5">
@@ -360,7 +360,7 @@ const onSubmit = async (data: FormData) => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                     className={cn(
-                      "border p-6 rounded-xl min-h-[500px] max-h-[500px] overflow-y-auto",
+                      "border p-6 rounded-xl min-h-[100px] max-h-[500px] overflow-y-auto my-10",
                       featuredCards[openedIndex]?.bgColor
                     )}
                   >

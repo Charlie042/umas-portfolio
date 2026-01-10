@@ -45,12 +45,7 @@ export function GalleryModal({ id, bgColor, title, titleColor, children }: CardP
               className="relative z-10 flex h-full max-h-[800px] w-full max-w-[1000px] flex-col overflow-hidden rounded-[40px] p-12 shadow-2xl"
               style={{ backgroundColor: bgColor }}
             >
-              <motion.button
-                onClick={() => setSelectedId(null)}
-                className="absolute right-8 top-8 h-10 w-10 rounded-full bg-black/10 text-xl"
-              >
-                ✕
-              </motion.button>
+           
 
               <motion.h1
                 layoutId={`title-${id}`}
@@ -59,13 +54,20 @@ export function GalleryModal({ id, bgColor, title, titleColor, children }: CardP
                 {title}
               </motion.h1>
 
+                 <motion.button
+                onClick={() => setSelectedId(null)}
+                className="absolute right-8 top-8 h-10 w-10 rounded-full bg-black/10 text-xl"
+              >
+                ✕
+              </motion.button>
+
               <motion.div
                 layoutId={`content-${id}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.1 }}
-                className="mt-8 text-lg text-white/80"
+                className="mt-8 text-lg h-full overflow-y-scroll scroll-none text-white/80"
               >
                 {children}
               </motion.div>
