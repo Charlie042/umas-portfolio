@@ -31,7 +31,7 @@ export function GalleryModal({ id, bgColor, title, titleColor, children }: CardP
 
       <AnimatePresence>
         {selectedId && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-20">
+          <div className="fixed inset-0 z-10 flex items-center justify-center p-4 sm:p-20">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
