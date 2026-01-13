@@ -7,6 +7,7 @@ import {
   playgroundContent,
   skillBadge,
 } from "@/sanity/lib/queries";
+import { revalidateTag } from "next/cache";
 
 // Helper function to upload image to Sanity
 async function uploadImageToSanity(
@@ -32,23 +33,47 @@ async function uploadImageToSanity(
 }
 
 export async function fetchData() {
-  const data = await client.fetch(playgroundContent);
+  const data = await client.fetch(
+    playgroundContent,
+    {},
+    {
+      next: { tags: ["playground"] },
+    }
+  );
   return data;
 }
 
 export async function fetchSkillBadgeData() {
-  const data = await client.fetch(skillBadge);
+  const data = await client.fetch(
+    skillBadge,
+    {},
+    {
+      next: { tags: ["skillBadge"] },
+    }
+  );
 
   return data;
 }
 
 export async function fetchAboutMeData() {
-  const data = await client.fetch(aboutMeContent);
+  const data = await client.fetch(
+    aboutMeContent,
+    {},
+    {
+      next: { tags: ["aboutMe"] },
+    }
+  );
   return data;
 }
 
 export async function fetchFeaturedWorkData() {
-  const data = await client.fetch(getFeaturedCards);
+  const data = await client.fetch(
+    getFeaturedCards,
+    {},
+    {
+      next: { tags: ["featuredCards"] },
+    }
+  );
   return data;
 }
 
@@ -159,6 +184,9 @@ export async function updateFeaturedCard(documentId: string, data: any) {
 
     const result = await writeClient.patch(documentId).set(updateData).commit();
 
+    // Revalidate the cache after update
+    revalidateTag("featuredCards", "max");
+
     return { success: true, result };
   } catch (error: any) {
     console.error("Error updating featured card:", error);
@@ -252,6 +280,9 @@ export async function createFeaturedCard(data: any) {
     });
 
     const result = await writeClient.create(createData);
+
+    // Revalidate the cache after create
+    revalidateTag("featuredCards", "max");
 
     return { success: true, documentId: result._id, result };
   } catch (error: any) {
