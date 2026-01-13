@@ -14,6 +14,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { updateFeaturedCard, uploadImage } from "../components/apiAction";
 import { ImageUpload } from "../components/image-upload";
+import { toast } from "sonner";
 
 type FormData = z.infer<typeof featuredCardSchema>;
 
@@ -24,7 +25,6 @@ export function FeaturedWorkEdit({ featuredCards }: { featuredCards: FeaturedCar
  const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
  const [hasOpened, setHasOpened] = useState(false);
  const [openedIndex, setOpenedIndex] = useState<number | null>(null);
- const [submitStatus, setSubmitStatus] = useState<{ success?: string; error?: string }>({});
  const [cardImageFile, setCardImageFile] = useState<File | null>(null);
  const [shapeImageFile, setShapeImageFile] = useState<File | null>(null);
 
@@ -134,12 +134,11 @@ export function FeaturedWorkEdit({ featuredCards }: { featuredCards: FeaturedCar
 
 const onSubmit = async (data: FormData) => {
   if (openedIndex === null || !featuredCards[openedIndex]?._id) {
-    setSubmitStatus({ error: "No card selected or missing document ID" });
+    toast.error("No card selected or missing document ID");
     return;
   }
 
   try {
-    setSubmitStatus({}); // Clear previous status
     
     // Format colors properly - ensure bg-[#HEX] format
     const formatColor = (color: string): string => {
@@ -225,7 +224,7 @@ const onSubmit = async (data: FormData) => {
       if (uploadResult.success && uploadResult.assetId) {
         cardImageAssetId = uploadResult.assetId;
       } else {
-        setSubmitStatus({ error: uploadResult.error || "Failed to upload card image" });
+        toast.error(uploadResult.error || "Failed to upload card image");
         return;
       }
     }
@@ -237,7 +236,7 @@ const onSubmit = async (data: FormData) => {
       if (uploadResult.success && uploadResult.assetId) {
         shapeImageAssetId = uploadResult.assetId;
       } else {
-        setSubmitStatus({ error: uploadResult.error || "Failed to upload shape image" });
+        toast.error(uploadResult.error || "Failed to upload shape image");
         return;
       }
     }
@@ -255,23 +254,23 @@ const onSubmit = async (data: FormData) => {
     // Submit to Sanity
     const documentId = featuredCards[openedIndex]._id;
     if (!documentId) {
-      setSubmitStatus({ error: "Document ID is missing. Cannot update card." });
+      toast.error("Document ID is missing. Cannot update card.");
       return;
     }
     const result = await updateFeaturedCard(documentId, formValues);
     
     if (result.success) {
-      setSubmitStatus({ success: "Card updated successfully in Sanity!" });
+      toast.success("Card updated successfully in Sanity!");
       // Optionally refresh the page or update local state
       setTimeout(() => {
         window.location.reload();
       }, 2000);
     } else {
-      setSubmitStatus({ error: result.error || "Failed to update card in Sanity" });
+      toast.error(result.error || "Failed to update card in Sanity");
     }
   } catch (error: any) {
     console.error("Validation or submission error:", error);
-    setSubmitStatus({ error: error.message || "Invalid form data or update failed" });
+    toast.error(error.message || "Invalid form data or update failed");
   }
 };
 
@@ -675,12 +674,6 @@ const onSubmit = async (data: FormData) => {
                                 )}
                             />
                         </div>
-                        {submitStatus.success && (
-                            <p className="text-green-500 text-sm">{submitStatus.success}</p>
-                        )}
-                        {submitStatus.error && (
-                            <p className="text-red-500 text-sm">{submitStatus.error}</p>
-                        )}
                         <Button type="submit" disabled={form.formState.isSubmitting} className={cn("cursor-pointer border px-4 py-2 rounded-md w-40 mb-4 self-center", featuredCards[openedIndex]?.shapeName === "Vimedra" ? "text-white border-white" : "text-black border-black")}>
                             {form.formState.isSubmitting ? "Updating..." : "Update Card"}
                         </Button>

@@ -8,6 +8,7 @@ import {
   Footer,
   ConditionalWhatIKnow,
 } from "@/components/shared-components";
+import { Toaster } from "@/components/ui/sonner";
 
 const satoshi = localFont({
   src: [
@@ -72,6 +73,7 @@ export default function RootLayout({
         <div className="">
           <main>{children}</main>
         </div>
+        <Toaster position="top-right" />
       </body>
     </html>
   );
