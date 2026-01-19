@@ -1,7 +1,7 @@
+import type { Metadata } from "next";
 import FourPhase from "@/components/About-me/Four-phase";
 import About from "@/components/About-me/about";
 import ImageGallery from "@/components/About-me/components/image-gallery";
-import { client } from "@/sanity/lib/client";
 import { use } from "react";
 import { fetchAboutMeData } from "@/components/apiAction";
 
@@ -18,3 +18,8 @@ const AboutMe = () => {
 };
 
 export default AboutMe;
+
+export const metadata: Metadata = {
+  title: "Umas About Me",
+  description: "Umas About Me",
+};

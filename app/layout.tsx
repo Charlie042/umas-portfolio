@@ -2,12 +2,6 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Unbounded } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import {
-  NavigationBar,
-  WhatPeopleSay,
-  Footer,
-  ConditionalWhatIKnow,
-} from "@/components/shared-components";
 import { Toaster } from "@/components/ui/sonner";
 
 const satoshi = localFont({
@@ -49,7 +43,7 @@ const satoshi = localFont({
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
-}); 
+});
 const unbounded = Unbounded({
   variable: "--font-unbounded",
   subsets: ["latin"],
@@ -58,6 +52,9 @@ const unbounded = Unbounded({
 export const metadata: Metadata = {
   title: "Uma's Portfolio",
   description: "Uma's Portfolio",
+  verification: {
+    google: "G_LPjlaTqRm2dL3IZkEjFTyB_U8DHtfN_OGYSv98VfY",
+  },
 };
 
 export default function RootLayout({

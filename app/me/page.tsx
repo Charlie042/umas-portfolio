@@ -1,15 +1,16 @@
 import { use } from "react";
+import type { Metadata } from "next";
 import Hero from "@/components/Home/Hero";
 import FeaturedWorks from "@/components/Home/featured-works";
-import { NavigationBar } from "@/components/shared-components";
-import { client } from "@/sanity/lib/client";
-import { getFeaturedCards } from "@/sanity/lib/queries";
 import { fetchFeaturedWorkData } from "@/components/apiAction";
 
-export default  function Home() {
-  const featuredCards = use(fetchFeaturedWorkData());
+export const metadata: Metadata = {
+  title: "Umas Portfolio",
+  description: "Umas Portfolio",
+};
 
-  
+export default async function Home() {
+  const featuredCards = use(fetchFeaturedWorkData());
 
   return (
     <section>
