@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { baseUrl } from "@/lib/constants";
 
-export function generateSitemap(): MetadataRoute.Sitemap {
+export default function generateSitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${baseUrl}/`, lastModified: new Date(), priority: 1 },
     {

@@ -48,7 +48,7 @@ export const handleResumeView = (url: string, fallbackUrl?: string) => {
     newWindow = window.open(
       url,
       "_blank",
-      "noopener,noreferrer,scrollbars=yes,resizable=yes"
+      "noopener,noreferrer,scrollbars=yes,resizable=yes",
     );
 
     if (newWindow) {
@@ -75,7 +75,7 @@ export const handleResumeView = (url: string, fallbackUrl?: string) => {
       if (document.hasFocus()) {
         console.error("All popup attempts failed");
         alert(
-          "Please allow popups for this site to view the resume, or right-click and select 'Open in new tab'."
+          "Please allow popups for this site to view the resume, or right-click and select 'Open in new tab'.",
         );
       }
     }, 100);
@@ -83,7 +83,7 @@ export const handleResumeView = (url: string, fallbackUrl?: string) => {
     console.error("Error opening resume PDF:", error);
 
     alert(
-      "Unable to open resume. Please try right-clicking the link and selecting 'Open in new tab'."
+      "Unable to open resume. Please try right-clicking the link and selecting 'Open in new tab'.",
     );
   }
 };

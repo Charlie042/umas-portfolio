@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: "Umas Portfolio",
 };
 
-export default async function Home() {
-  const featuredCards = use(fetchFeaturedWorkData());
+export default async function MePage() {
+  const featuredCards = await fetchFeaturedWorkData();
 
   return (
     <section>
