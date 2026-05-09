@@ -11,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { createFeaturedCard, uploadImage } from "../components/apiAction";
 import { ImageUpload } from "../components/image-upload";
+import { toast } from "sonner";
 
 type FormData = z.infer<typeof featuredCardSchema>;
 
@@ -176,21 +177,16 @@ export function FeaturedWorkAdd() {
       const result = await createFeaturedCard(formValues);
 
       if (result.success) {
-        setSubmitStatus({ success: "Card created successfully in Sanity!" });
-        // Reset form and clear image files
+        toast.success("Card created successfully in Sanity!");
         form.reset(defaultValues);
         setCardImageFile(null);
         setShapeImageFile(null);
-        // Optionally refresh the page or update local state
-        setTimeout(() => {
-          window.location.reload();
-        }, 2000);
       } else {
-        setSubmitStatus({ error: result.error || "Failed to create card in Sanity" });
+        toast.error(result.error || "Failed to create card in Sanity");
       }
     } catch (error: any) {
       console.error("Validation or submission error:", error);
-      setSubmitStatus({ error: error.message || "Invalid form data or creation failed" });
+      toast.error(error.message || "Invalid form data or creation failed");
     }
   };
 
@@ -563,12 +559,6 @@ export function FeaturedWorkAdd() {
               )}
             />
           </div>
-          {submitStatus.success && (
-            <p className="text-green-500 text-sm">{submitStatus.success}</p>
-          )}
-          {submitStatus.error && (
-            <p className="text-red-500 text-sm">{submitStatus.error}</p>
-          )}
           <Button
             type="submit"
             disabled={form.formState.isSubmitting}

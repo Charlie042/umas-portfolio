@@ -288,3 +288,20 @@ export async function createFeaturedCard(data: any) {
     return { success: false, error: error.message || "Failed to create card" };
   }
 }
+
+export async function deleteFeaturedCard(documentId: string) {
+  try {
+    if (!documentId) {
+      return { success: false, error: "Missing document ID" };
+    }
+    await writeClient.delete(documentId);
+    revalidateFeaturedCards();
+    return { success: true };
+  } catch (error: any) {
+    console.error("Error deleting featured card:", error);
+    return {
+      success: false,
+      error: error.message || "Failed to delete card",
+    };
+  }
+}
