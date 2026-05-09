@@ -16,6 +16,15 @@ import { urlFor } from "@/sanity/lib/image";
 import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
+/** Only use urlFor when we have a real Sanity asset ref (e.g. image-xxx), not a path like "/shape.png". */
+function isValidSanityImageSource(source: unknown): source is SanityImageSource {
+  if (source == null) return false;
+  if (typeof source === "string") return source.startsWith("image-");
+  const o = source as { asset?: { _ref?: string } };
+  const ref = o?.asset?._ref;
+  return typeof ref === "string" && ref.startsWith("image-");
+}
+
 export interface featuredCardProps {
   id: number;
   bgColor: string;
@@ -125,10 +134,11 @@ const FeaturedCard = ({
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
               <div className="absolute isolate  z-50">
                 <Image
-                  src={urlFor(shapeImage as SanityImageSource)
-                    .width(800)
-                    .height(600)
-                    .url()}
+                  src={
+                    isValidSanityImageSource(shapeImage)
+                      ? urlFor(shapeImage).width(800).height(600).url()
+                      : "/shape.png"
+                  }
                   alt="shape"
                   width={50}
                   height={50}
@@ -208,15 +218,17 @@ const FeaturedCard = ({
             style={{ scale: ImageScale }}
             className="absolute top-0 left-0 w-full h-full "
           >
-            <Image
-              src={urlFor(cardImage as SanityImageSource)
-                .width(1200)
-                .url()}
-              alt="Featured work"
-              width={500}
-              height={500}
-              className="w-full h-full object-cover"
-            />
+            {isValidSanityImageSource(cardImage) ? (
+              <Image
+                src={urlFor(cardImage).width(1200).url()}
+                alt="Featured work"
+                width={500}
+                height={500}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full min-h-[200px] bg-muted/50 rounded-lg" aria-hidden />
+            )}
           </motion.div>
         </motion.div>
       </motion.div>

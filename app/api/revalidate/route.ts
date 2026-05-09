@@ -1,4 +1,7 @@
-import { revalidateTag, revalidatePath } from "next/cache";
+import {
+  revalidateSanityDocumentType,
+  sanityTypeRevalidationMap,
+} from "@/lib/sanity-revalidate";
 import { type NextRequest, NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
@@ -50,52 +53,17 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ message, body }), { status: 400 });
     }
 
-    // Map Sanity document types to revalidation tags and paths
-    const tagMap: Record<string, { tag: string; paths: string[] }> = {
-      featuredCard: {
-        tag: "featuredCards",
-        paths: ["/me", "/"],
-      },
-      aboutMeContent: {
-        tag: "aboutMe",
-        paths: ["/me/about-me"],
-      },
-      playgroundSection: {
-        tag: "playground",
-        paths: ["/me/playground"],
-      },
-      skillBadge: {
-        tag: "skillBadge",
-        paths: ["/me", "/me/about-me", "/me/playground"], // Skill badges are used in layout
-      },
-    };
+    const config = sanityTypeRevalidationMap[body._type];
 
-    const config = tagMap[body._type];
+    revalidateSanityDocumentType(body._type);
 
     if (config) {
-      // Revalidate the cache tag
-      revalidateTag(config.tag, "max");
-
-      // Revalidate the page paths and layouts
-      config.paths.forEach((path) => {
-        revalidatePath(path, "page");
-        revalidatePath(path, "layout"); // Also revalidate layouts
-      });
-
       console.log(
         `Revalidated tag: ${config.tag} and paths: ${config.paths.join(
           ", "
         )} for type: ${body._type}`
       );
     } else {
-      // If no specific config, revalidate all tags and common paths
-      Object.values(tagMap).forEach((c) => {
-        revalidateTag(c.tag, "max");
-        c.paths.forEach((path) => {
-          revalidatePath(path, "page");
-          revalidatePath(path, "layout");
-        });
-      });
       console.log(`Revalidated all tags and paths for type: ${body._type}`);
     }
 

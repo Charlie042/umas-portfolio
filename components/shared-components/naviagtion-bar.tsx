@@ -126,7 +126,7 @@ const NavigationBar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ ease: easeInOut }}
-                className="fixed h-[840px] w-[313px] bg-[#FFF8F1] left-0 top-1 shadow-md z-40"
+                className="fixed h-[840px] w-[313px] bg-[#FFF8F1] left-0 top-1 shadow-md z-50"
               >
                 <div className="mt-10 flex justify-between items-center mx-3">
                   <Link href="/" className=" lg:mx-0">

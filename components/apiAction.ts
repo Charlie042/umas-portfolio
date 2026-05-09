@@ -6,7 +6,6 @@ import {
   playgroundContent,
   skillBadge,
 } from "@/sanity/lib/queries";
-import { revalidateTag } from "next/cache";
 
 export async function fetchData() {
   const data = await client.fetch(

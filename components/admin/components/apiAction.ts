@@ -7,7 +7,7 @@ import {
   playgroundContent,
   skillBadge,
 } from "@/sanity/lib/queries";
-import { revalidateTag } from "next/cache";
+import { revalidateFeaturedCards } from "@/lib/sanity-revalidate";
 
 // Helper function to upload image to Sanity
 async function uploadImageToSanity(
@@ -184,8 +184,7 @@ export async function updateFeaturedCard(documentId: string, data: any) {
 
     const result = await writeClient.patch(documentId).set(updateData).commit();
 
-    // Revalidate the cache after update
-    revalidateTag("featuredCards", "max");
+    revalidateFeaturedCards();
 
     return { success: true, result };
   } catch (error: any) {
@@ -281,8 +280,7 @@ export async function createFeaturedCard(data: any) {
 
     const result = await writeClient.create(createData);
 
-    // Revalidate the cache after create
-    revalidateTag("featuredCards", "max");
+    revalidateFeaturedCards();
 
     return { success: true, documentId: result._id, result };
   } catch (error: any) {
