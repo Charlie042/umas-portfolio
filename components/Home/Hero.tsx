@@ -45,7 +45,7 @@ const Hero = () => {
   return (
     <div className="mt-5 md:mt-20  flex flex-col gap-5 px-5 h-[80vh]">
       <div className="flex items-center">
-        <motion.h1 className="lg:relative font-bricolage  xl:text-[90px] lg:text-[70px] md:text-[50px] text-[30px] leading-tight font-medium text-[#1E1E1E] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-6px] overflow-visible">
+        <motion.h1 className="lg:relative font-bricolage xl:text-[90px] lg:text-[70px] md:text-[70px] text-[30px] leading-tight font-medium text-[#1E1E1E] tracking-[-2px] md:tracking-[-3px] lg:tracking-[-6px] overflow-visible">
           <motion.span
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,11 +138,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="flex justify-center mt-20 md:mt-0 self-end"
+            className="flex justify-center md:justify-end mt-20 md:mt-0 self-end w-full"
           >
             <button
               onClick={scrollToFeatured}
-              className="animate-bounce bg-white p-2 w-14 h-14 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer"
+              className="animate-bounce bg-white p-2 md:w-14 md:h-14 w-10 h-10 ring-1 ring-slate-900/5  shadow-lg rounded-full flex items-center justify-center cursor-pointer"
             >
               <IoArrowDownSharp className="w-7 h-7 text-[#1E1E1E]" />
             </button>

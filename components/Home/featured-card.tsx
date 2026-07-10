@@ -116,7 +116,7 @@ const FeaturedCard = ({
       <motion.div
         onClick={handleClick}
         className={cn(
-          "group my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-lg md:rounded-tl-none relative",
+          "group my-10 space-y-5 md:w-[85vw] xl:w-[1020px] md:mx-20 mx-2  xl:mx-auto px-2 py-3  md:p-5  lg:px-5 lg:pt-5 lg:pb-10  rounded-xl md:rounded-tl-none relative",
           bgColor,
           textColor,
         )}
@@ -128,11 +128,11 @@ const FeaturedCard = ({
           backgroundColor: ConvertBgToHex(bgColor),
         }}
       >
-        <div className="hidden md:flex justify-between item-center relative">
+        <div className="flex justify-between item-center relative">
           <div className="absolute isolate">
-            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative  w-30">
+            <div className=" top-30 -left-27 z-10 rotate-90 text-2xl font-bold font-bricolage flex items-center justify-center relative   w-30">
               <h2 className="text-2xl font-bold font-bricolage">{shapeName}</h2>
-              <div className="absolute isolate  z-50">
+              <div className="absolute isolate z-50">
                 <Image
                   src={
                     isValidSanityImageSource(shapeImage)
@@ -191,7 +191,7 @@ const FeaturedCard = ({
                 </span>
               )}
             </h1>
-            <p className=" text-xs md:text-sm lg:text-base font-medium ">
+            <p className=" text-xs md:text-sm lg:text-base font-medium hidden lg:block">
               {description}
             </p>
           </div>
@@ -204,13 +204,13 @@ const FeaturedCard = ({
             <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>
               {percent1}
             </p>
-            <p className="text-sm lg:text-base font-medium">{percentSixty}</p>
+            <p className="text-sm lg:text-base lg:font-medium font-light">{percentSixty}</p>
           </div>
           <div className="flex flex-col lg:gap-3">
             <p className={cn(titleColor, "text-lg lg:text-2xl font-bold")}>
               {percent2}
             </p>
-            <p className="text-sm lg:text-base font-medium">{percentForty}</p>
+            <p className="text-sm lg:text-base lg:font-medium font-light">{percentForty}</p>
           </div>
         </div>
         <motion.div className="max-w-[800px] lg:max-w-[1089px] min-h-[200px] lg:min-h-[400px] rounded-lg mx-auto my-10 w-full relative isolate overflow-hidden">

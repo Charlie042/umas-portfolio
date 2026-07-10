@@ -67,7 +67,7 @@ const FeaturedWorks = ({
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1, ease: "easeOut" }}
-        className="px-2 md:px-0 font-bricolage text-[#1E1E1E] text-xl md:text-3xl font-bold "
+        className="px-5 md:px-0 font-bricolage text-[#1E1E1E] text-xl md:text-3xl font-bold "
       >
         Featured Works
       </motion.h3>
@@ -76,7 +76,7 @@ const FeaturedWorks = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.5, ease: "easeOut" }}
-          className=" text-sm md:text-xl text-[#696969] max-w-245 mt-2 md:mt-5 font-medium"
+          className="px-4 text-sm md:text-xl text-[#696969] max-w-245 mt-2 md:mt-5 font-medium"
         >
           Here are some of my best works so far.
         </motion.p>
